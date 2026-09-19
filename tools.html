@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lexend:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -1082,10 +1082,107 @@
       ctx.drawImage(img, 0, 0);
       return c.toDataURL('image/jpeg', 0.92);
     }
-    function getJsPDF() {
+    function extractJsPDF() {
       if (window.jspdf && window.jspdf.jsPDF) return window.jspdf.jsPDF;
-      if (window.jsPDF) return window.jsPDF;
-      throw new Error('jsPDF library not loaded properly. Please refresh the page.');
+      if (window.jspdf && window.jspdf.default) return window.jspdf.default;
+      if (typeof window.jspdf === 'function') return window.jspdf;
+      if (typeof window.jsPDF === 'function') return window.jsPDF;
+      if (window.jsPDF && window.jsPDF.jsPDF) return window.jsPDF.jsPDF;
+      return null;
+    }
+
+    function getJsPDF() {
+      const Lib = extractJsPDF();
+      if (Lib) return Lib;
+      throw new Error('jsPDF library not loaded properly. Please check internet connection and refresh.');
+    }
+
+    async function ensureJsPDF() {
+      let Lib = extractJsPDF();
+      if (Lib) return Lib;
+
+      const cdns = [
+        'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
+        'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js',
+        'https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js'
+      ];
+
+      for (const src of cdns) {
+        try {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          Lib = extractJsPDF();
+          if (Lib) return Lib;
+        } catch (e) {
+          console.warn('Failed loading jsPDF from ' + src, e);
+        }
+      }
+      throw new Error('jsPDF library could not be loaded. Please check your network connection.');
+    }
+
+    async function ensurePdfjs() {
+      if (window.pdfjsLib) {
+        if (window.pdfjsLib.GlobalWorkerOptions && !window.pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+        return window.pdfjsLib;
+      }
+
+      const cdns = [
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+        'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js',
+        'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js'
+      ];
+
+      for (const src of cdns) {
+        try {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          if (window.pdfjsLib) {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            return window.pdfjsLib;
+          }
+        } catch (e) {
+          console.warn('Failed loading pdf.js from ' + src, e);
+        }
+      }
+      throw new Error('PDF rendering engine (pdf.js) could not be loaded.');
+    }
+
+    async function ensurePdfLib() {
+      if (window.PDFLib) return window.PDFLib;
+
+      const cdns = [
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js',
+        'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js',
+        'https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js'
+      ];
+
+      for (const src of cdns) {
+        try {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          if (window.PDFLib) return window.PDFLib;
+        } catch (e) {
+          console.warn('Failed loading pdf-lib from ' + src, e);
+        }
+      }
+      throw new Error('PDF processing library (pdf-lib) could not be loaded.');
     }
 
     /* ═══════ TOOL DEFINITIONS ═══════ */
@@ -1506,7 +1603,7 @@
           try {
             const img = await loadImage(file);
             const jpegDataUrl = imageToJpegDataUrl(img);
-            const jsPDF = getJsPDF();
+            const jsPDF = await ensureJsPDF();
             const isLandscape = img.width > img.height;
             const pdf = new jsPDF(isLandscape ? 'l' : 'p', 'mm', 'a4');
 
@@ -1605,25 +1702,29 @@
         ctrls.innerHTML = `<div class="control-row"><span class="control-label">Font Size</span><input type="number" class="control-input" id="pdfFs" value="12" min="6" max="72"></div>`;
         const btn = document.createElement('button'); btn.className='tool-action-btn purple'; btn.textContent='Generate PDF'; body.appendChild(btn);
         const out = document.createElement('div'); body.appendChild(out);
-        btn.onclick = () => {
+        btn.onclick = async () => {
           const text = ta.value.trim();
           if (!text) return addResult(out, 'Please enter some text.', true);
           out.innerHTML = '';
-          const jsPDF = getJsPDF();
-          const pdf = new jsPDF('p', 'mm', 'a4');
-          const fs = parseInt(ctrls.querySelector('#pdfFs').value) || 12;
-          pdf.setFontSize(fs);
-          const lines = pdf.splitTextToSize(text, 180);
-          const lineH = fs * 0.4;
-          let y = 20;
-          lines.forEach(line => {
-            if (y + lineH > 280) { pdf.addPage(); y = 20; }
-            pdf.text(line, 15, y);
-            y += lineH;
-          });
-          const blob = pdf.output('blob');
-          addResult(out, `PDF created: ${lines.length} lines, ${pdf.getNumberOfPages()} page(s) (${fmtSize(blob.size)})`);
-          addDownloadBtn(out, blob, 'document.pdf', 'Download PDF');
+          try {
+            const jsPDF = await ensureJsPDF();
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const fs = parseInt(ctrls.querySelector('#pdfFs').value) || 12;
+            pdf.setFontSize(fs);
+            const lines = pdf.splitTextToSize(text, 180);
+            const lineH = fs * 0.4;
+            let y = 20;
+            lines.forEach(line => {
+              if (y + lineH > 280) { pdf.addPage(); y = 20; }
+              pdf.text(line, 15, y);
+              y += lineH;
+            });
+            const blob = pdf.output('blob');
+            addResult(out, `PDF created: ${lines.length} lines, ${pdf.getNumberOfPages()} page(s) (${fmtSize(blob.size)})`);
+            addDownloadBtn(out, blob, 'document.pdf', 'Download PDF');
+          } catch(e) {
+            addResult(out, 'Error creating PDF: ' + e.message, true);
+          }
         };
       }
     };
@@ -1666,7 +1767,7 @@
           btn.disabled = true;
           btn.textContent = 'Creating PDF...';
           try {
-            const jsPDF = getJsPDF();
+            const jsPDF = await ensureJsPDF();
             let pdf = null;
             for (let i = 0; i < fileList.length; i++) {
               const img = await loadImage(fileList[i]);
@@ -2102,10 +2203,8 @@
           btn.textContent = 'Preparing PDF compression...';
 
           try {
-            if (!window.pdfjsLib) throw new Error('PDF compression engine library not loaded.');
-
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-            const pdfDoc = await pdfjsLib.getDocument({ data: pdfBytes.slice(0) }).promise;
+            const pdfjs = await ensurePdfjs();
+            const pdfDoc = await pdfjs.getDocument({ data: pdfBytes.slice(0) }).promise;
             const totalPages = pdfDoc.numPages;
 
             const level = ctrls.querySelector('#cmpLevel').value;
@@ -2113,7 +2212,7 @@
             if (level === 'high') { scale = 0.9; quality = 0.45; }
             if (level === 'low') { scale = 1.6; quality = 0.82; }
 
-            const jsPDF = getJsPDF();
+            const jsPDF = await ensureJsPDF();
             let outPdf = null;
 
             for (let i = 1; i <= totalPages; i++) {
