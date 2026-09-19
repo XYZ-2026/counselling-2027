@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SEO Optimization Meta Tags -->
+    <title>MHT-CET Counselling Hub & Tools — College Simplified</title>
+    <meta name="keywords" content="Counselling, mhtcet, josaa counselling, college simplified, mhtcet counselling, concept simplified, mhtcet counseling, josaa counseling, counseling, college predictor, college predictors, engineering college predictor, college admission predictor, mhtcet dashboard, maharashtra engineering admissions, cap rounds, dte maharashtra">
+    <meta name="description" content="Access the comprehensive MHT-CET Counselling Dashboard. Predict college options, calculate percentile-to-rank, and build preference lists.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="MHT-CET Counselling Hub & Tools — College Simplified">
+    <meta property="og:description" content="Access the comprehensive MHT-CET Counselling Dashboard. Predict college options, calculate percentile-to-rank, and build preference lists.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://counselling.collegesimplified.in/cet-landing.html">
+    <meta property="og:site_name" content="College Simplified">
+    
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "College Simplified",
+      "url": "https://counselling.collegesimplified.in/",
+      "sameAs": [
+        "https://play.google.com/store/apps/details?id=co.mark.vvzmn",
+        "https://apps.apple.com/in/app/myinstitute/id1472483563",
+        "https://www.instagram.com/college_simplified/",
+        "https://youtube.com/@conceptsimplified"
+      ]
+    }
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lexend:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --brand: #dc2626;
+      --brand-soft: #fef2f2;
+      --brand-ring: rgba(220, 38, 38, 0.15);
+      --ink: #111827;
+      --muted: #6b7280;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --stroke: rgba(0, 0, 0, 0.08);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      padding-top: 64px;
+      line-height: 1.6
+    }
+
+    .hero {
+      padding: 44px 20px 24px;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto
+    }
+
+    .badge {
+      background: var(--brand-soft);
+      color: var(--brand);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-block;
+      margin-bottom: 14px;
+      border: 1px solid var(--brand-ring)
+    }
+
+    .hero h1 {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em
+    }
+
+    .hero h1 span {
+      color: var(--brand)
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.55
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 56px
+    }
+
+    .section {
+      animation: fadeUp 0.6s ease both
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 48px
+    }
+
+    .section-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      color: var(--brand);
+      box-shadow: var(--shadow);
+      flex-shrink: 0
+    }
+
+    .section-title {
+      flex: 1
+    }
+
+    .section-title h2 {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      color: var(--ink);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 700px
+    }
+
+    .meta-badge {
+      background: var(--bg);
+      border: 1.5px solid var(--stroke);
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px
+    }
+
+    .meta-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 3px var(--brand-ring)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: 32px
+    }
+
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 28px;
+      padding: 40px;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden
+    }
+
+    .tool-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--brand)
+    }
+
+    .tool-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1
+    }
+
+    .tool-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      background: var(--bg);
+      color: var(--muted);
+      transition: all 0.3s;
+      border: 1px solid var(--stroke)
+    }
+
+    .tool-card:hover .tool-icon {
+      background: var(--white);
+      color: var(--brand);
+      border-color: var(--brand-ring);
+      transform: scale(1.05)
+    }
+
+    .arrow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      transition: all 0.3s;
+      border: 1px solid var(--stroke)
+    }
+
+    .tool-card:hover .arrow {
+      background: var(--brand);
+      color: #fff;
+      transform: rotate(-45deg);
+      border-color: var(--brand)
+    }
+
+    .tool-info h3 {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 12px
+    }
+
+    .tool-info p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    .tool-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: var(--bg);
+      color: var(--muted);
+      margin-top: 8px
+    }
+
+    .tool-card:hover .tool-tag {
+      background: var(--brand-soft);
+      color: var(--brand)
+    }
+
+    @media (max-width: 768px) {
+      .section-header {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px
+      }
+
+      .section-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px
+      }
+
+      .section-title h2 {
+        font-size: 26px
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 20px
+      }
+
+      .tool-card {
+        padding: 32px
+      }
+
+      .hero {
+        padding: 80px 20px 40px
+      }
+
+      .wrap {
+        gap: 60px
+      }
+    }
+
+    /* ── Promotional Banners Grid Wrapper ── */
+    .promotional-banners-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .community-section {
+      width: 100%;
+      margin: 0;
+    }
+
+    .community-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      background: linear-gradient(135deg, #dc2626 0%, #be123c 50%, #9f1239 100%);
+      border-radius: 28px;
+      padding: 40px;
+      gap: 40px;
+      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.3);
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .community-container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.45);
+    }
+
+    .community-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: skewX(-25deg);
+      transition: 0.8s;
+    }
+
+    .community-container:hover::before {
+      left: 150%;
+    }
+
+    .community-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    .community-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .community-badge {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .community-content h2 {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .community-content p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .community-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .community-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+
+    .community-btn-primary {
+      background: #ffffff;
+      color: #be123c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .community-btn-primary:hover {
+      background: #fef2f2;
+      color: #9f1239;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .community-image-wrapper {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      line-height: 0;
+      z-index: 2;
+    }
+
+    .community-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 991px) {
+      .community-container {
+        grid-template-columns: 1fr;
+        padding: 32px;
+        gap: 32px;
+      }
+
+      .community-image-wrapper {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .community-content {
+        align-items: center;
+        text-align: center;
+      }
+
+      .community-text-group {
+        align-items: center;
+        text-align: center;
+      }
+
+      .community-badge {
+        align-self: center;
+      }
+
+      .community-buttons {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .community-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
+    /* ── Scaler Promo Banner Section ── */
+    .scaler-promo-section {
+      width: 100%;
+      margin-bottom: 48px;
+    }
+    .scaler-promo-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      background: linear-gradient(135deg, #dc2626 0%, #be123c 50%, #9f1239 100%);
+      border-radius: 28px;
+      padding: 40px;
+      gap: 40px;
+      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.3);
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+    }
+    .scaler-promo-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: skewX(-25deg);
+      transition: 0.8s;
+    }
+    .scaler-promo-container:hover::before {
+      left: 150%;
+    }
+    .scaler-promo-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 2;
+    }
+    .scaler-promo-badge {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .scaler-promo-content h2 {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin: 0;
+    }
+    .scaler-promo-content p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .scaler-promo-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .scaler-promo-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .scaler-promo-btn.btn-primary {
+      background: #ffffff;
+      color: #be123c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .scaler-promo-btn.btn-primary:hover {
+      background: #fef2f2;
+      color: #9f1239;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .scaler-promo-btn.btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+    .scaler-promo-btn.btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    .scaler-promo-image {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      line-height: 0;
+      z-index: 2;
+    }
+    .scaler-promo-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 991px) {
+      .scaler-promo-container {
+        grid-template-columns: 1fr;
+        padding: 32px;
+        gap: 32px;
+      }
+      .scaler-promo-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .scaler-promo-content {
+        align-items: center;
+        text-align: center;
+      }
+      .scaler-promo-badge {
+        align-self: center;
+      }
+      .scaler-promo-buttons {
+        justify-content: center;
+        width: 100%;
+      }
+      .scaler-promo-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <div class="badge">Professional Counselling Platform</div>
+    <h1>Master Your <span>Counselling</span> Journey</h1>
+    <p>Premium tools for MHT-CET and JEE Mains All India admissions. Predict colleges, check cutoffs, and build your
+      perfect preference list.</p>
+  </div>
+
+  <div class="wrap">
+
+    <!-- CET SECTION -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+          </svg>
+        </div>
+        <div class="section-title">
+          <h2>MHT-CET Form Simulation</h2>
+          <p>Complete toolkit for Maharashtra state-level counselling. Predict your percentile, estimate rank, and find
+            matching colleges.</p>
+          <div class="meta-badge"><span class="dot"></span> 10 Professional Tools</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <style>
+          .tool-card-2026 {
+            background: var(--card);
+            border: 2px solid #dc2626;
+            border-radius: 28px;
+            padding: 40px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.12);
+            position: relative;
+            overflow: hidden;
+          }
+          .tool-card-2026::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+          }
+          .tool-card-2026:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+            border-color: #b91c1c;
+          }
+          .tool-card-2026 .tool-icon {
+            background: #fef2f2;
+            color: #dc2626;
+            border-color: rgba(220, 38, 38, 0.2);
+          }
+          .tool-card-2026:hover .tool-icon {
+            background: #fee2e2;
+            color: #b91c1c;
+            border-color: #dc2626;
+            transform: scale(1.05);
+          }
+          .tool-card-2026:hover .arrow {
+            background: #dc2626;
+            color: #fff;
+            transform: rotate(-45deg);
+            border-color: #dc2626;
+          }
+          .tool-card-2026 .tool-tag {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+          }
+          .tool-card-2026:hover .tool-tag {
+            background: #dc2626;
+            color: #fff;
+          }
+          .new-2026-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            animation: badge-pulse 2s ease-in-out infinite;
+          }
+          @keyframes badge-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+          }
+        </style>
+
+        <a class="tool-card" href="cet_marks.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m7.5 4.27 9 5.15" />
+                <path d="M21 8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>Marks vs Percentile</h3>
+            <p>Enter your MHT-CET marks to get an estimated percentile score based on shift difficulty.</p>
+            <div class="tool-tag">CET Metrics</div>
+          </div>
+        </a>
+        <a class="tool-card" href="cet_rank.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>Percentile vs Rank</h3>
+            <p>Convert your MHT-CET percentile into an estimated state-level rank for better round planning.</p>
+            <div class="tool-tag">Rank Predictor</div>
+          </div>
+        </a>
+        <a class="tool-card" href="mht_cet_college_predictor.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>MHT CET College Predictor</h3>
+            <p>Strategic predictor using your rank and percentile to find your best matching Maharashtra colleges.</p>
+            <div class="tool-tag">Advanced Match</div>
+          </div>
+        </a>
+        <a class="tool-card" href="college_explorer.html">
+          <div class="tool-top">
+            <div class="tool-icon">
+              <!-- Custom Explorer Magnifying Glass with Chart Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>College Explorer & Cutoffs</h3>
+            <p>Explore seat matrices, placement stats, and category-wise closing ranks/percentiles across all CAP admission rounds.</p>
+            <div class="tool-tag">Explorer & Cutoffs</div>
+          </div>
+        </a>
+        <a class="tool-card" href="cet_colleges.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+                <path d="M3 20h18" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>Top Colleges & Placements</h3>
+            <p>Explore Maharashtra's leading colleges with official placement stats, package details, and tiers.</p>
+            <div class="tool-tag">Placements & Tiers</div>
+          </div>
+        </a>
+        <a class="tool-card" href="compare_colleges.html">
+          <div class="tool-top">
+            <div class="tool-icon">
+              <!-- Custom Comparison Scale Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+                <path d="M3 20h18" />
+              </svg>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>College Compare Tool</h3>
+            <p>Compare two Maharashtra engineering colleges side-by-side based on placements, rankings, offered branches, total seat intakes, and cutoffs.</p>
+            <div class="tool-tag">Comparison</div>
+          </div>
+        </a>
+        <a class="tool-card" href="Branch.html">
+          <div class="tool-top">
+            <div class="tool-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>Branch Prediction Test</h3>
+            <p>Answer 60 scenario-based questions to map your engineering strengths and discover your ideal engineering branch.</p>
+            <div class="tool-tag">Career Intelligence</div>
+          </div>
+        </a>
+        <a class="tool-card" href="career_library.html">
+          <div class="tool-top">
+            <div class="tool-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>Career Library</h3>
+            <p>Explore engineering branches, detailed academic roadmaps, tools & technologies, career paths, salaries, and future industry trends.</p>
+            <div class="tool-tag">Branch Intelligence</div>
+          </div>
+        </a>
+        <a class="tool-card" href="cet_chatbot.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                <circle cx="9" cy="10" r="1" />
+                <circle cx="15" cy="10" r="1" />
+                <path d="M8 15h8" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>MHT CET Chatbot</h3>
+            <p>Interactive virtual advisor to calculate percentiles, ranks, check cutoffs, and predict colleges conversationally.</p>
+            <div class="tool-tag">Virtual Mentor</div>
+          </div>
+        </a>
+        <a class="tool-card" href="preference-builder.html">
+          <div class="tool-top">
+            <div class="tool-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>Preference List Builder</h3>
+            <p>Smart 4-step wizard to build your MHT-CET counselling preference list with college matching, drag-and-drop reordering, and PDF export.</p>
+            <div class="tool-tag">Counselling Utility</div>
+          </div>
+        </a>
+        <a class="tool-card" href="auto-preference-builder.html">
+          <div class="tool-top">
+            <div class="tool-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <path d="m9 15 2 2 4-4" />
+              </svg>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3 style="display:flex; align-items:center; gap:6px">Auto Preference Builder <span style="font-size:14px">🔒</span></h3>
+            <p>Instant preference list generator. Takes all compulsory criteria, runs predictor in background, and auto-generates your PDF.</p>
+            <div class="tool-tag" style="background:#fef9e7; color:#b8860b; border:1px solid rgba(184,134,11,0.3)">Premium Tool 🔒</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Branch Predictor Banner Bar -->
+      <div class="test-banner-bar" style="margin-top: 40px; margin-bottom: 0;">
+        <style>
+          .test-banner-bar {
+            position: relative;
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 50%, #9f1239 100%);
+            color: #ffffff;
+            padding: 28px 36px;
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            box-shadow: 0 20px 40px -10px rgba(225, 29, 72, 0.3);
+            overflow: hidden;
+            animation: fadeUp 0.6s ease both;
+          }
+          /* Subtle diagonal shine effect */
+          .test-banner-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: skewX(-25deg);
+            transition: 0.75s;
+          }
+          .test-banner-bar:hover::before {
+            left: 150%;
+            transition: 0.75s ease-out;
+          }
+          /* Background decorative glowing circles */
+          .test-banner-bar::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            top: -100px;
+            right: -50px;
+            z-index: 1;
+            pointer-events: none;
+          }
+          .test-banner-left {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+          .test-banner-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+          }
+          .test-banner-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+          }
+          .test-banner-badge {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+          }
+          .test-banner-title {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.01em;
+            text-transform: capitalize;
+          }
+          .test-banner-sub {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 550px;
+            line-height: 1.45;
+          }
+          .test-banner-right {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+          }
+          .btn-take-test-premium {
+            background: #ffffff;
+            color: #be123c;
+            padding: 14px 28px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+          }
+          .btn-take-test-premium svg {
+            transition: transform 0.3s;
+          }
+          .btn-take-test-premium:hover {
+            background: #ffffff;
+            color: #9f1239;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.4);
+          }
+          .btn-take-test-premium:hover svg {
+            transform: translateX(4px);
+          }
+          @media (max-width: 900px) {
+            .test-banner-bar {
+              flex-direction: column;
+              align-items: stretch;
+              padding: 24px;
+              gap: 20px;
+            }
+            .test-banner-left {
+              align-items: flex-start;
+            }
+            .test-banner-right {
+              text-align: center;
+            }
+            .btn-take-test-premium {
+              width: 100%;
+              justify-content: center;
+            }
+          }
+          @media (max-width: 640px) {
+            .test-banner-left {
+              flex-direction: column;
+              gap: 14px;
+            }
+            .test-banner-icon {
+              width: 48px;
+              height: 48px;
+              font-size: 24px;
+            }
+          }
+        </style>
+        <div class="test-banner-left">
+          <div class="test-banner-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.2"/>
+              <circle cx="12" cy="12" r="1"/>
+              <circle cx="12" cy="4" r="2"/>
+              <circle cx="4" cy="12" r="2"/>
+              <circle cx="20" cy="12" r="2"/>
+              <circle cx="12" cy="20" r="2"/>
+              <circle cx="6.34" cy="6.34" r="2"/>
+              <circle cx="17.66" cy="6.34" r="2"/>
+              <circle cx="6.34" cy="17.66" r="2"/>
+              <circle cx="17.66" cy="17.66" r="2"/>
+              <line x1="12" y1="6" x2="12" y2="9"/>
+              <line x1="12" y1="15" x2="12" y2="18"/>
+              <line x1="6" y1="12" x2="9" y2="12"/>
+              <line x1="15" y1="12" x2="18" y2="12"/>
+              <line x1="7.76" y1="7.76" x2="9.88" y2="9.88"/>
+              <line x1="14.12" y1="14.12" x2="16.24" y2="16.24"/>
+              <line x1="14.12" y1="9.88" x2="16.24" y2="7.76"/>
+              <line x1="7.76" y1="16.24" x2="9.88" y2="14.12"/>
+            </svg>
+          </div>
+          <div class="test-banner-details">
+            <span class="test-banner-badge">AI Brain Mapping</span>
+            <div class="test-banner-title">discover your perfect branch</div>
+            <p class="test-banner-sub">Answer 60 scenarios in our psychometric engine to map your strengths to the ideal engineering branch.</p>
+          </div>
+        </div>
+        <div class="test-banner-right">
+          <a href="Branch.html" class="btn-take-test-premium">
+            take test
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JEE SECTION -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+          </svg>
+        </div>
+        <div class="section-title">
+          <h2>JEE Mains All India Seats</h2>
+          <p>Strategic tools for candidates targeting Maharashtra state-level counselling via the JEE Mains All India
+            quota.</p>
+          <div class="meta-badge"><span class="dot"></span> 3 Professional Tools</div>
+        </div>
+      </div>
+      <div class="grid">
+
+        <a class="tool-card" href="percentile_vs_college_predictor.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m16 10-4 4-2-2" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>College Predictor</h3>
+            <p>Enter your JEE percentile to see which colleges & branches you can target based on historical data.</p>
+            <div class="tool-tag">Data Powered</div>
+          </div>
+        </a>
+        <a class="tool-card" href="cutoff_checker.html">
+          <div class="tool-top">
+            <div class="tool-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+              </svg></div>
+            <div class="arrow">→</div>
+          </div>
+          <div class="tool-info">
+            <h3>AI Cutoff Checker</h3>
+            <p>Search any college to view MHT-CET & JEE Mains cutoffs across all branches and seat types.</p>
+            <div class="tool-tag">Full Analysis</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Premium Counselling Banners Section -->
+    <section class="premium-banners-section">
+      <style>
+        .premium-banners-section {
+          width: 100%;
+          font-family: 'Inter', sans-serif;
+        }
+        .banners-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 28px;
+          margin-top: 24px;
+        }
+        .premium-banner-card {
+          background: var(--card, #ffffff);
+          border: 1px solid var(--stroke, rgba(0,0,0,0.08));
+          border-radius: 24px;
+          overflow: hidden;
+          text-decoration: none;
+          color: inherit;
+          display: flex;
+          flex-direction: column;
+          box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .premium-banner-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-lg, 0 20px 25px -5px rgba(0,0,0,0.1));
+          border-color: var(--brand, #dc2626);
+        }
+        .banner-img-container {
+          position: relative;
+          width: 100%;
+          padding-top: 52%; /* Aspect ratio of banners */
+          overflow: hidden;
+          background: #f3f4f6;
+        }
+        .banner-img-container img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .premium-banner-card:hover .banner-img-container img {
+          transform: scale(1.05);
+        }
+        .banner-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        .premium-banner-card:hover .banner-overlay {
+          opacity: 1;
+        }
+        .view-program-btn {
+          background: #ffffff;
+          color: #111827;
+          padding: 10px 20px;
+          border-radius: 100px;
+          font-weight: 700;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          transform: translateY(10px);
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .premium-banner-card:hover .view-program-btn {
+          transform: translateY(0);
+        }
+        .banner-text-details {
+          padding: 20px 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .banner-text-details h3 {
+          font-family: 'Lexend', sans-serif;
+          font-weight: 700;
+          font-size: 18px;
+          color: var(--ink, #111827);
+        }
+        .banner-text-details p {
+          font-size: 13.5px;
+          color: var(--muted, #6b7280);
+          line-height: 1.4;
+        }
+        .section-header-banner {
+          margin-bottom: 8px;
+        }
+        .banner-badge-top {
+          background: var(--brand-soft, #fef2f2);
+          color: var(--brand, #dc2626);
+          padding: 6px 14px;
+          border-radius: 100px;
+          font-size: 11px;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          display: inline-block;
+          margin-bottom: 12px;
+          border: 1px solid var(--brand-ring, rgba(220,38,38,0.1));
+        }
+        .section-header-banner h2 {
+          font-family: 'Lexend', sans-serif;
+          font-weight: 800;
+          font-size: 24px;
+          color: var(--ink, #111827);
+          letter-spacing: -0.01em;
+        }
+        .section-header-banner p {
+          color: var(--muted, #6b7280);
+          font-size: 14.5px;
+          margin-top: 4px;
+        }
+        @media (max-width: 640px) {
+          .banners-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+          .banner-text-details {
+            padding: 16px 20px;
+          }
+          .banner-text-details h3 {
+            font-size: 16px;
+          }
+          .section-header-banner h2 {
+            font-size: 20px;
+          }
+        }
+      </style>
+      <div class="section-header-banner">
+        <div class="banner-badge-top">Premium Counselling Programs</div>
+        <h2>Direct Personal Counselling 2026</h2>
+        <p>Get premium mentoring from expert counselors to secure your dream engineering college seat.</p>
+      </div>
+      <div class="banners-grid">
+        <!-- Banner 1 -->
+        <a href="https://www.conceptsimplified.in/courses/668919" target="_blank" class="premium-banner-card">
+          <div class="banner-img-container">
+            <img src="https://courses-assets-v2.classplus.co/_next/image?url=/api/proxyimage?url=https%3A%2F%2Fcdn-wl-assets.classplus.co%2Fproduction%2Fsingle%2Fijpsrw%2Fa181e913-c49f-4ed8-8838-c15b38cf7a58.png&w=640&q=75" alt="Simplified Pro | Maharashtra Engineering Admission Counselling 2026">
+            <div class="banner-overlay">
+              <span class="view-program-btn">View Program &rarr;</span>
+            </div>
+          </div>
+          <div class="banner-text-details">
+            <h3>Simplified Pro</h3>
+            <p>Maharashtra Engineering Admission Counselling 2026</p>
+          </div>
+        </a>
+
+        <!-- Banner 2 -->
+        <a href="https://www.conceptsimplified.in/courses/840574" target="_blank" class="premium-banner-card">
+          <div class="banner-img-container">
+            <img src="https://courses-assets-v2.classplus.co/_next/image?url=/api/proxyimage?url=https%3A%2F%2Fcdn-wl-assets.classplus.co%2Fproduction%2Fsingle%2Fijpsrw%2Fbde224eb-a206-48f0-ae15-2d2d20fbfaf5.png&w=640&q=75" alt="Simplified Premium 1:1 | Maharashtra Engineering Admission Counselling 2026">
+            <div class="banner-overlay">
+              <span class="view-program-btn">View Program &rarr;</span>
+            </div>
+          </div>
+          <div class="banner-text-details">
+            <h3>Simplified Premium 1:1</h3>
+            <p>Maharashtra Engineering Admission Counselling 2026</p>
+          </div>
+        </a>
+
+        <!-- Banner 3 -->
+        <a href="https://www.conceptsimplified.in/courses/860295" target="_blank" class="premium-banner-card">
+          <div class="banner-img-container">
+            <img src="https://courses-assets-v2.classplus.co/_next/image?url=/api/proxyimage?url=https%3A%2F%2Fcdn-wl-assets.classplus.co%2Fproduction%2Fsingle%2Fijpsrw%2F0c12cc3c-cb87-46ff-a2cc-8a1a790b2e4c.png&w=640&q=75" alt="AI Counselling | College Predictor Platform 2026">
+            <div class="banner-overlay">
+              <span class="view-program-btn">Explore AI Counselling &rarr;</span>
+            </div>
+          </div>
+          <div class="banner-text-details">
+            <h3>AI-Powered College Predictor</h3>
+            <p>Data-driven branch predictions & personalized admission strategies</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="firebase_config.js"></script>
+  <script src="shared_auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const session = initAuth({ requireLogin: false });
+      if (session && session.id) {
+        try {
+          const res = await authApi('getPsychometricReport', { userId: session.id });
+          if (res.ok && res.data) {
+            // User has a saved report! Modify the banner UI to show the options.
+            displaySavedReportBanner(res.data);
+          }
+        } catch (err) {
+          console.error('Failed to load saved report summary:', err);
+        }
+      }
+    });
+
+    function displaySavedReportBanner(report) {
+      const topBranch = report.allBranches?.[0];
+      const banner = document.querySelector('.test-banner-bar');
+      if (!banner || !topBranch) return;
+
+      // Update badge, title, and subtitle to show the results summary
+      const titleEl = banner.querySelector('.test-banner-title');
+      const subEl = banner.querySelector('.test-banner-sub');
+      const badgeEl = banner.querySelector('.test-banner-badge');
+      const rightEl = banner.querySelector('.test-banner-right');
+
+      if (banner) {
+        banner.style.setProperty('display', 'flex', 'important');
+      }
+      if (badgeEl) {
+        badgeEl.textContent = 'Report Available';
+        badgeEl.style.background = '#22c55e'; // Green badge
+        badgeEl.style.borderColor = 'rgba(255,255,255,0.4)';
+      }
+      if (titleEl) {
+        titleEl.textContent = 'Branch Prediction Test Completed';
+      }
+      if (subEl) {
+        subEl.innerHTML = `Your top recommended branch is <strong>${topBranch.branch || topBranch.name}</strong> with a match score of <strong>${topBranch.matchScore || topBranch.match}%</strong>.`;
+      }
+      if (rightEl) {
+        // Show View/Download Previous Report and Retake Test option
+        rightEl.innerHTML = `
+          <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+            <a href="Branch.html" class="btn-take-test-premium" style="background: #ffffff; color: #be123c;">
+              Download / View Report
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+            <a href="Branch.html" style="color: #ffffff; font-weight: 800; font-size: 13.5px; text-decoration: underline; text-transform: uppercase; letter-spacing: 0.8px;">
+              Retake Test
+            </a>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+
+</html>

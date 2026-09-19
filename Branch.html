@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Engineering DNA Assessment | College Simplified</title>
+<meta name="description" content="Discover the engineering branch you are truly built for. Take a 60-question psychometric assessment and get personalized branch recommendations with a premium PDF report.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+(function(){var t=localStorage.getItem('cs_theme')||'light';document.documentElement.setAttribute('data-theme',t)})();
+</script>
+<style>
+:root{
+--red:#dc2626;--dark-red:#b91c1c;--soft-red:#fef2f2;--white:#FFFFFF;--off-white:#fafafa;
+--text-dark:#111827;--text-muted:#6b7280;--border:rgba(0,0,0,0.08);--black:#111111;
+--success:#22C55E;--warning:#F59E0B;--info:#3B82F6;
+--bg:var(--white);--bg-alt:var(--off-white);--text:var(--text-dark);--text-sec:var(--text-muted);
+--card-bg:var(--white);--card-shadow:0 10px 30px -10px rgba(0,0,0,0.06);--card-border:var(--border);
+--nav-bg:rgba(255,255,255,.92);--modal-bg:rgba(0,0,0,.4);
+--grad:linear-gradient(135deg,var(--red),var(--dark-red));
+--radius:24px;--radius-sm:14px;--radius-xs:8px;--transition:.3s ease;
+}
+[data-theme="dark"]{
+--bg:#0f0f0f;--bg-alt:#161616;--text:#f3f4f6;--text-sec:#9ca3af;
+--card-bg:#1a1a1a;--card-shadow:0 10px 30px -10px rgba(0,0,0,0.3);--card-border:rgba(255,255,255,0.08);
+--nav-bg:rgba(15,15,15,.94);--soft-red:#251214;--border:rgba(255,255,255,0.08);--off-white:#161616;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;
+transition:background var(--transition),color var(--transition);overflow-x:hidden}
+h1,h2,h3,h4,h5,h6,.section-title{font-family:'Lexend',sans-serif;font-weight:700;letter-spacing:-0.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-label{font-size:.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+color:var(--red);margin-bottom:8px}
+.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:12px;line-height:1.2}
+.section-sub{font-size:1.05rem;color:var(--text-sec);max-width:640px;margin:0 auto 40px;line-height:1.7}
+.text-center{text-align:center}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;
+font-family:inherit;font-size:.95rem;font-weight:600;border:none;cursor:pointer;
+transition:all var(--transition);text-align:center;justify-content:center}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(229,57,53,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(229,57,53,.4)}
+.btn-secondary{background:transparent;color:var(--red);border:2px solid var(--red)}
+.btn-secondary:hover{background:var(--soft-red)}
+.btn-sm{padding:10px 22px;font-size:.85rem}
+.btn-lg{padding:16px 40px;font-size:1.05rem}
+
+/* Navbar */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);
+backdrop-filter:blur(20px);border-bottom:1px solid var(--card-border);transition:all var(--transition)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem}
+.nav-logo .logo-icon{width:36px;height:36px;background:var(--grad);border-radius:10px;
+display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.9rem}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--text-sec);transition:color var(--transition)}
+.nav-links a:hover{color:var(--red)}
+.theme-toggle{width:42px;height:24px;background:var(--card-border);border-radius:50px;
+position:relative;cursor:pointer;border:none;transition:background var(--transition)}
+.theme-toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;
+background:var(--text);border-radius:50%;transition:all var(--transition)}
+[data-theme="dark"] .theme-toggle::after{transform:translateX(18px);background:var(--red)}
+.nav-cta{display:none}
+.mobile-menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+@media(min-width:768px){.nav-cta{display:inline-flex}.mobile-menu-btn{display:none}}
+@media(max-width:767px){
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--nav-bg);
+padding:20px 24px;flex-direction:column;gap:16px;border-bottom:1px solid var(--card-border)}
+.nav-links.active{display:flex}
+.mobile-menu-btn{display:block}
+}
+
+/* Hero */
+.hero{padding:120px 0 60px;position:relative;overflow:hidden}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:20px}
+.hero-text p{font-size:1.1rem;color:var(--text-sec);margin-bottom:32px;line-height:1.7;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{position:relative;height:420px}
+.floating-card{position:absolute;background:var(--card-bg);border:1px solid var(--card-border);
+border-radius:var(--radius);padding:16px 22px;box-shadow:var(--card-shadow);
+font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:10px;
+animation:float 6s ease-in-out infinite;white-space:nowrap}
+.floating-card .fc-icon{width:36px;height:36px;border-radius:10px;display:flex;
+align-items:center;justify-content:center;font-size:1.1rem}
+.fc1{top:10%;left:5%;animation-delay:0s}.fc2{top:5%;right:10%;animation-delay:1s}
+.fc3{top:38%;left:0;animation-delay:2s}.fc4{top:42%;right:5%;animation-delay:.5s}
+.fc5{bottom:18%;left:10%;animation-delay:1.5s}.fc6{bottom:10%;right:8%;animation-delay:2.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media(max-width:768px){
+.hero-content{grid-template-columns:1fr;text-align:center}
+.hero-text p{margin-left:auto;margin-right:auto}
+.hero-btns{justify-content:center}
+.hero-visual{height:280px;margin-top:20px}
+.floating-card{font-size:.75rem;padding:10px 14px}
+.floating-card .fc-icon{width:28px;height:28px;font-size:.85rem}
+}
+
+/* Cards Grid */
+.cards-grid{display:grid;gap:20px}
+.cards-grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cards-grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.cards-grid-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.cards-grid-16{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);
+padding:28px;transition:all var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(229,57,53,.1);border-color:var(--red)}
+.card-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;
+justify-content:center;font-size:1.4rem;margin-bottom:16px}
+.card-icon-red{background:var(--soft-red);color:var(--red)}
+.card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.card p{font-size:.9rem;color:var(--text-sec);line-height:1.6}
+.mini-card{padding:18px;text-align:center}
+.mini-card .card-icon{margin:0 auto 12px;width:42px;height:42px;font-size:1.2rem}
+.mini-card h3{font-size:.88rem;margin-bottom:4px}
+.mini-card p{font-size:.78rem}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;counter-reset:step}
+.step{text-align:center;position:relative}
+.step-num{width:52px;height:52px;border-radius:50%;background:var(--grad);color:#fff;
+display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;
+margin:0 auto 16px;box-shadow:0 4px 16px rgba(229,57,53,.25)}
+.step h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.step p{font-size:.88rem;color:var(--text-sec)}
+
+/* Sample Report Section */
+.sample-section{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.sample-mockup{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);
+padding:30px;box-shadow:var(--card-shadow);position:relative}
+.sample-cover{background:var(--grad);border-radius:var(--radius-sm);padding:40px 30px;color:#fff;text-align:center}
+.sample-cover h2{font-size:1.4rem;margin-bottom:6px}
+.sample-cover p{font-size:.85rem;opacity:.9}
+.sample-cover .sample-badge{display:inline-block;background:rgba(255,255,255,.2);
+padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:600;margin-top:14px}
+.sample-info h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:14px}
+.sample-info p{color:var(--text-sec);margin-bottom:24px;line-height:1.7}
+.sample-features{list-style:none;margin-bottom:28px}
+.sample-features li{padding:8px 0;font-size:.92rem;display:flex;align-items:center;gap:10px}
+.sample-features li::before{content:'✓';color:var(--red);font-weight:700}
+@media(max-width:768px){.sample-section{grid-template-columns:1fr}.hero-content{grid-template-columns:1fr}}
+
+/* Chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{background:var(--soft-red);color:var(--red);padding:10px 20px;border-radius:50px;
+font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:6px}
+
+/* FAQ */
+.faq-item{border:1px solid var(--card-border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
+.faq-q{padding:18px 24px;font-weight:600;font-size:.95rem;cursor:pointer;display:flex;
+justify-content:space-between;align-items:center;background:var(--card-bg);transition:background var(--transition)}
+.faq-q:hover{background:var(--soft-red)}
+.faq-q .faq-arrow{transition:transform var(--transition);font-size:.8rem}
+.faq-item.active .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 24px;
+font-size:.9rem;color:var(--text-sec);line-height:1.7}
+.faq-item.active .faq-a{max-height:300px;padding:0 24px 18px}
+
+/* Footer */
+.footer{background:var(--bg-alt);border-top:1px solid var(--card-border);padding:40px 0;text-align:center}
+.footer p{font-size:.85rem;color:var(--text-sec)}
+
+/* Assessment */
+.assessment-view,.results-view{display:none;min-height:100vh;padding-top:80px}
+.assessment-view.active,.results-view.active{display:block}
+.homepage-view{display:block}
+.homepage-view.hidden{display:none}
+
+.progress-container{background:var(--bg-alt);border-bottom:1px solid var(--card-border);
+padding:16px 24px;position:sticky;top:64px;z-index:100}
+.progress-inner{max-width:700px;margin:0 auto}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:.85rem}
+.progress-section{font-weight:600;color:var(--red)}
+.progress-count{color:var(--text-sec)}
+.progress-bar{height:6px;background:var(--card-border);border-radius:50px;overflow:hidden}
+.progress-fill{height:100%;background:var(--grad);border-radius:50px;transition:width .5s ease}
+.section-dots{display:flex;gap:6px;margin-top:10px;justify-content:center}
+.section-dot{width:10px;height:10px;border-radius:50%;background:var(--card-border);transition:all var(--transition)}
+.section-dot.completed{background:var(--success)}
+.section-dot.active{background:var(--red);transform:scale(1.3)}
+
+.question-container{max-width:700px;margin:40px auto;padding:0 24px}
+.question-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);
+padding:36px;box-shadow:var(--card-shadow);animation:fadeUp .4s ease}
+.question-section-tag{font-size:.75rem;font-weight:600;color:var(--red);letter-spacing:2px;
+text-transform:uppercase;margin-bottom:16px}
+.question-text{font-size:1.15rem;font-weight:600;line-height:1.5;margin-bottom:28px}
+.options{display:flex;flex-direction:column;gap:12px}
+.option{padding:16px 20px;border:2px solid var(--card-border);border-radius:var(--radius-sm);
+cursor:pointer;transition:all var(--transition);font-size:.93rem;line-height:1.5;display:flex;align-items:flex-start;gap:12px}
+.option:hover{border-color:var(--red);background:var(--soft-red)}
+.option.selected{border-color:var(--red);background:var(--soft-red);font-weight:500}
+.option-letter{min-width:28px;height:28px;border-radius:50%;background:var(--bg-alt);
+display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;
+color:var(--text-sec);border:2px solid var(--card-border);flex-shrink:0}
+.option.selected .option-letter{background:var(--red);color:#fff;border-color:var(--red)}
+.question-nav{display:flex;justify-content:space-between;margin-top:28px}
+
+/* Results */
+.results-hero{padding:40px 0;text-align:center}
+.dna-badge{display:inline-flex;align-items:center;gap:12px;background:var(--grad);color:#fff;
+padding:14px 30px;border-radius:50px;font-size:1.1rem;font-weight:700;margin-bottom:16px;
+box-shadow:0 6px 24px rgba(229,57,53,.3)}
+.dna-badge .badge-icon{font-size:1.5rem}
+.results-name{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:8px}
+.results-sub{color:var(--text-sec);font-size:1rem;max-width:600px;margin:0 auto 32px}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:40px}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr}}
+.chart-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);
+padding:28px;box-shadow:var(--card-shadow);box-sizing:border-box}
+@media(max-width:480px){
+  .chart-card{padding:16px 12px}
+  .chart-container{height:260px !important}
+}
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.chart-card h3{font-size:1.1rem;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+
+.branch-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);
+padding:24px;cursor:pointer;transition:all var(--transition);position:relative;overflow:hidden}
+.branch-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(229,57,53,.12);border-color:var(--red)}
+.branch-rank{position:absolute;top:0;left:0;background:var(--grad);color:#fff;
+width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+font-weight:700;font-size:.9rem;border-radius:0 0 var(--radius-sm) 0}
+.branch-card h3{font-size:1.1rem;font-weight:600;margin-bottom:4px;padding-left:30px}
+.branch-match{color:var(--red);font-weight:700;font-size:1.3rem;margin-bottom:8px}
+.branch-card p{font-size:.85rem;color:var(--text-sec);line-height:1.5;margin-bottom:12px}
+.branch-tags{display:flex;flex-wrap:wrap;gap:6px}
+.branch-tag{font-size:.72rem;padding:4px 10px;border-radius:50px;background:var(--soft-red);color:var(--red);font-weight:500}
+.branch-indicators{display:flex;gap:16px;margin-top:12px;font-size:.8rem;color:var(--text-sec)}
+.indicator{display:flex;align-items:center;gap:4px}
+
+/* Roadmap Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:var(--modal-bg);z-index:2000;
+overflow-y:auto;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.active{display:flex;justify-content:center;align-items:flex-start}
+.modal-content{background:var(--card-bg);border-radius:var(--radius);max-width:900px;width:100%;
+padding:40px;position:relative;margin:20px auto;animation:fadeUp .3s ease;max-height:90vh;overflow-y:auto}
+.modal-close{position:sticky;top:0;float:right;background:var(--bg-alt);border:1px solid var(--card-border);
+width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+cursor:pointer;font-size:1.2rem;z-index:10;transition:all var(--transition)}
+.modal-close:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
+.roadmap-header{margin-bottom:30px;padding-bottom:20px;border-bottom:2px solid var(--card-border)}
+.roadmap-header h2{font-size:1.6rem;font-weight:700;margin-bottom:6px}
+.roadmap-header .rm-match{color:var(--red);font-weight:600;font-size:1rem}
+.roadmap-section{margin-bottom:28px}
+.roadmap-section h3{font-size:1.1rem;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px;color:var(--red)}
+.roadmap-section p{font-size:.9rem;color:var(--text-sec);line-height:1.7;margin-bottom:8px}
+.roadmap-list{list-style:none;padding:0}
+.roadmap-list li{padding:8px 0 8px 20px;font-size:.9rem;color:var(--text-sec);position:relative;line-height:1.5}
+.roadmap-list li::before{content:'▹';position:absolute;left:0;color:var(--red);font-weight:700}
+.year-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.year-card{background:var(--bg-alt);border-radius:var(--radius-sm);padding:18px;border:1px solid var(--card-border)}
+.year-card h4{font-size:.9rem;font-weight:700;color:var(--red);margin-bottom:8px}
+.year-card ul{list-style:none;padding:0}
+.year-card ul li{font-size:.82rem;color:var(--text-sec);padding:3px 0}
+
+/* Sample Report Modal */
+.sample-modal-content{max-width:800px}
+.sample-page{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);
+padding:40px;margin-bottom:20px;page-break-after:always}
+.sample-nav{display:flex;justify-content:center;gap:10px;margin-bottom:20px;position:sticky;top:0;
+background:var(--card-bg);padding:12px;border-radius:var(--radius-sm);z-index:5}
+.sample-nav button{padding:8px 16px;border:1px solid var(--card-border);border-radius:var(--radius-xs);
+background:var(--bg-alt);font-family:inherit;font-size:.82rem;cursor:pointer;transition:all var(--transition)}
+.sample-nav button.active,.sample-nav button:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
+/* Comparison Table */
+.comparison-table{width:100%;border-collapse:collapse;margin-top:20px}
+.comparison-table th,.comparison-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--card-border);font-size:.88rem}
+.comparison-table th{font-weight:600;color:var(--red);background:var(--bg-alt)}
+.comparison-table tr:hover{background:var(--soft-red)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+
+/* PDF generation area */
+#pdf-render-area{position:absolute;left:-9999px;top:0;width:794px;background:#f9f9f9;}
+.pdf-page{width:794px;height:1123px;padding:60px 50px;background:#fff;position:relative;box-sizing:border-box;font-family:'Poppins',sans-serif;color:var(--text);page-break-after:always;display:flex;flex-direction:column}
+.pdf-page-footer{position:absolute;bottom:30px;left:50px;right:50px;display:flex;justify-content:space-between;font-size:10px;color:#999;border-top:1px solid #eee;padding-top:10px}
+.pdf-header{background:var(--grad);color:#fff;padding:60px 40px;text-align:center;border-radius:12px;margin-bottom:30px}
+.pdf-title{font-size:24px;font-weight:700;margin-bottom:20px;color:var(--red)}
+.pdf-card{border:1px solid #eaeaea;border-radius:8px;padding:20px;margin-bottom:20px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.02)}
+.pdf-timeline{position:relative;padding-left:20px;margin-bottom:20px}
+.pdf-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--card-border)}
+.pdf-timeline-item{position:relative;margin-bottom:15px}
+.pdf-timeline-item::before{content:'';position:absolute;left:-24px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--red);border:2px solid #fff}
+
+/* Utility */
+.hidden{display:none!important}
+.mb-20{margin-bottom:20px}.mb-40{margin-bottom:40px}.mt-20{margin-top:20px}
+.divider{height:1px;background:var(--card-border);margin:60px 0}
+
+/* Assessment History Styles */
+.history-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.history-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.history-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history-date {
+  font-size: 0.85rem;
+  color: var(--text-sec);
+}
+.history-dna-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: var(--soft-red);
+  color: var(--red);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.history-branch-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 8px;
+}
+.history-match {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--success);
+}
+.history-card-footer {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.history-card-footer button {
+  flex: 1;
+}
+.guest-history-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<div id="toolArea">
+
+<!-- ===================== HOMEPAGE ===================== -->
+<div class="homepage-view" id="homepageView">
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+<div class="container">
+<div class="hero-content">
+  <div class="hero-text">
+    <h1>Discover the engineering branch you are <span class="text-gradient">truly built for.</span></h1>
+    <p>Take a 60-question assessment designed to analyze your aptitude, interest, work style, and career goals — then receive personalized engineering branch recommendations and a premium report.</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary btn-lg" onclick="startAssessment()">Start Assessment</button>
+      <button class="btn btn-secondary" onclick="openSampleReport()">Preview Sample Report</button>
+    </div>
+    <p style="margin-top:14px;font-size:.85rem;color:var(--text-sec)"><a href="#whats-inside" style="color:var(--red);font-weight:500">Explore What's Inside</a></p>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card fc1"><div class="fc-icon" style="background:#E3F2FD;color:#1565C0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>Computer Engineering</div>
+    <div class="floating-card fc2"><div class="fc-icon" style="background:#F3E5F5;color:#7B1FA2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v12"/><path d="M8 10c0-2.21 1.79-4 4-4"/><path d="M12 18c2.21 0 4-1.79 4-4"/></svg></div>AI &amp; ML</div>
+    <div class="floating-card fc3"><div class="fc-icon" style="background:#FFF3E0;color:#E65100"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg></div>Civil Engineering</div>
+    <div class="floating-card fc4"><div class="fc-icon" style="background:#E8F5E9;color:#2E7D32"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>Mechanical Engineering</div>
+    <div class="floating-card fc5"><div class="fc-icon" style="background:#FBE9E7;color:#BF360C"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"/><path d="M7 2v20"/><path d="M17 2v20"/><path d="M2 7h20"/><path d="M2 17h20"/></svg></div>Electronics Engineering</div>
+    <div class="floating-card fc6"><div class="fc-icon" style="background:#E0F7FA;color:#00838F"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="6" y="8" width="12" height="8" rx="2"/><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M11 21a2 2 0 1 0 2 0"/></svg></div>Robotics</div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- History Section -->
+<section class="section" id="history-section" style="display:none; background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<div class="container">
+  <div class="text-center mb-40">
+    <p class="section-label">Your Dashboard</p>
+    <h2 class="section-title">Assessment <span class="text-gradient">History</span></h2>
+    <p class="section-sub">View and download your previous engineering DNA reports and branch predictions.</p>
+  </div>
+  <div id="history-list-container" class="history-list-container">
+    <div style="text-align:center; padding:40px; color:var(--text-sec);">
+      ⏳ Loading your assessment history...
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Sample Report Preview -->
+<section class="section" id="sample-section">
+<div class="container">
+  <div class="text-center mb-40 animate-on-scroll">
+    <p class="section-label">Trust Before You Start</p>
+    <h2 class="section-title">See Your Future Report <span class="text-gradient">Before You Start</span></h2>
+    <p class="section-sub">Preview the quality, detail, and design of the final report before taking the assessment.</p>
+  </div>
+  <div class="sample-section animate-on-scroll">
+    <div class="sample-mockup">
+      <div class="sample-cover">
+        <p style="font-size:.75rem;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:12px">ENGINEERING DNA ASSESSMENT</p>
+        <h2>Personalized Report</h2>
+        <p>Prepared for: Arjun Mehta</p>
+        <div class="sample-badge">The Innovator</div>
+        <div style="margin-top:20px;font-size:.85rem;opacity:.9">
+          <p>Top Match: <strong>AI & Machine Learning — 94%</strong></p>
+          <p style="margin-top:6px">Assessment Date: June 2026</p>
+        </div>
+      </div>
+      <div style="padding:20px 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <span class="chip">16 Pages</span>
+        <span class="chip">5 Recommended Branches</span>
+        <span class="chip">Career Roadmaps</span>
+      </div>
+    </div>
+    <div class="sample-info">
+      <h2>What You'll Get</h2>
+      <p>A comprehensive, beautifully designed report that analyzes your engineering aptitude and recommends the best branches for you.</p>
+      <ul class="sample-features">
+        <li>Premium cover page with your Engineering DNA type</li>
+        <li>Detailed trait analysis with radar chart visualization</li>
+        <li>Top 7 personalized branch recommendations</li>
+        <li>Match percentages with explanations</li>
+        <li>Unique roadmap for every recommended branch</li>
+        <li>Career pathways, salary direction, and action plan</li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="openSampleReport()">Preview Sample Report</button>
+        <button class="btn btn-secondary" onclick="startAssessment()">Start Assessment</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- The 3 Core Questions -->
+<section class="section" id="core-questions" style="background:var(--bg-alt)">
+<div class="container">
+  <div class="text-center mb-40 animate-on-scroll">
+    <p class="section-label">Clarity</p>
+    <h2 class="section-title">Everything You <span class="text-gradient">Need to Know</span></h2>
+  </div>
+  <div class="cards-grid cards-grid-3 animate-on-scroll">
+    <div class="card">
+      <div class="card-icon card-icon-red">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </div>
+      <h3>How will it be used?</h3>
+      <p>Simply take our 60-question branch prediction test. Based on your inputs, our engine analyzes your strengths and generates a personalized report with your top 5 engineering branches.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon card-icon-red">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <h3>Why will it be used?</h3>
+      <p>To eliminate confusion. This assessment helps you choose a branch based on your natural aptitude, core interests, and career vision rather than peer pressure or guesswork.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon card-icon-red">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>For whom will it be used?</h3>
+      <p>For any student feeling confused about which engineering branch to pursue, or anyone wanting to validate their choices with data-driven insights and structured roadmaps.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Final CTA -->
+<section class="section" style="background:var(--grad);color:#fff;text-align:center">
+<div class="container animate-on-scroll">
+  <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:14px">Ready to Discover Your Engineering DNA?</h2>
+  <p style="font-size:1.05rem;opacity:.9;max-width:500px;margin:0 auto 28px">60 questions. 5 sections. One report that could change your engineering career.</p>
+  <button class="btn btn-lg" style="background:#fff;color:var(--red);font-weight:700" onclick="startAssessment()">Start Assessment Now</button>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+  <p><strong>College Simplified</strong> — Engineering DNA Assessment</p>
+  <p style="margin-top:6px">Built with care for engineering students. Secure Firestore Storage. Premium Analytics.</p>
+</div>
+</footer>
+</div>
+<!-- END HOMEPAGE -->
+
+<!-- ===================== ASSESSMENT VIEW ===================== -->
+<div class="assessment-view" id="assessmentView">
+  <div class="progress-container">
+    <div class="progress-inner">
+      <div class="progress-top">
+        <span class="progress-section" id="progressSection">Section 1: Problem Solving</span>
+        <span class="progress-count" id="progressCount">1 / 60</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="section-dots" id="sectionDots"></div>
+    </div>
+  </div>
+  <div class="question-container" id="questionContainer"></div>
+</div>
+
+<!-- ===================== RESULTS VIEW ===================== -->
+<div class="results-view" id="resultsView">
+  <div class="container" id="resultsContent"></div>
+</div>
+
+<!-- ===================== MODALS ===================== -->
+<div class="modal-overlay" id="roadmapModal">
+  <div class="modal-content" id="roadmapModalContent"></div>
+</div>
+<div class="modal-overlay" id="sampleReportModal">
+  <div class="modal-content sample-modal-content" id="sampleReportContent"></div>
+</div>
+</div>
+
+<!-- Hidden PDF render area -->
+<div id="pdf-render-area"></div>
+
+<!-- CDN Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="firebase_config.js"></script>
+<script src="shared_auth.js"></script>
+<script src="branches_data.js"></script>
+
+<script>
+let allowedBranches = null;
+const allowedBranchesPromise = fetch('unique_branches.txt')
+  .then(r => r.ok ? r.text() : '')
+  .then(txt => {
+    const set = new Set();
+    txt.split('\n').forEach(line => {
+      const match = line.trim().match(/^\d+\.\s*(.+)$/);
+      if (match) {
+        set.add(match[1].trim().toLowerCase());
+      }
+    });
+    allowedBranches = set;
+  })
+  .catch(err => {
+    console.error("Error loading unique_branches.txt:", err);
+    allowedBranches = new Set();
+  });
+
+/* ========== THEME & UI ========== */
+function toggleTheme(){
+  const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('cs_theme',t);
+  
+  // Re-render charts to update text/grid colors if results are active
+  if(document.getElementById('resultsView').classList.contains('active') && window.assessmentResults){
+    const{traitScores,topBranches,sectionScores}=window.assessmentResults;
+    renderCharts(traitScores,sectionScores,topBranches);
+  }
+}
+function toggleMobileMenu(){
+  const el = document.getElementById('navLinks');
+  if (el) el.classList.toggle('active');
+}
+function closeMobileMenu(){
+  const el = document.getElementById('navLinks');
+  if (el) el.classList.remove('active');
+}
+
+/* Scroll animations */
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.1});
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
+});
+
+/* ========== NAVIGATION ========== */
+function showHome(){
+  document.getElementById('homepageView').classList.remove('hidden');
+  document.getElementById('assessmentView').classList.remove('active');
+  document.getElementById('resultsView').classList.remove('active');
+  closeMobileMenu();
+  loadHistoryList();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function startAssessment(){
+  document.getElementById('homepageView').classList.add('hidden');
+  document.getElementById('assessmentView').classList.add('active');
+  document.getElementById('resultsView').classList.remove('active');
+  closeMobileMenu();
+  currentQuestion=0;
+  renderQuestion();
+  window.scrollTo({top:0});
+}
+function showResults(){
+  document.getElementById('homepageView').classList.add('hidden');
+  document.getElementById('assessmentView').classList.remove('active');
+  document.getElementById('resultsView').classList.add('active');
+  window.scrollTo({top:0});
+  renderResults();
+}
+
+/* ========== MODAL HELPERS ========== */
+function openModal(id){document.getElementById(id).classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById(id).classList.remove('active');document.body.style.overflow=''}
+document.querySelectorAll('.modal-overlay').forEach(m=>{
+  m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id)});
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.active').forEach(m=>closeModal(m.id))}
+});
+
+/* ========== CONSTANTS ========== */
+const SECTION_NAMES=['Problem Solving & Technical Aptitude','Subject Interest & Domain Curiosity',
+'Creative Approach & Design Thinking','Work Style & Personality','Career Goals & Industry Vision'];
+
+const DNA_TYPES=[
+{name:'The Innovator',icon:'💡',desc:'You thrive on creating novel solutions and pushing boundaries. Innovation is your core drive.',
+ traits:['Innovation','Creativity','DesignThinking'],color:'#FF6B35'},
+{name:'The Builder',icon:'🏗️',desc:'You love constructing tangible things — from structures to machines. Hands-on work energizes you.',
+ traits:['Construction','MechanicalSystems','SpatialThinking'],color:'#F59E0B'},
+{name:'The Analyst',icon:'📊',desc:'You excel at finding patterns in data and making sense of complexity through numbers.',
+ traits:['DataAnalysis','Mathematics','PatternRecognition'],color:'#3B82F6'},
+{name:'The Systems Thinker',icon:'🔄',desc:'You see the big picture and understand how complex systems interconnect and function.',
+ traits:['SystemsThinking','Automation','LogicalReasoning'],color:'#14B8A6'},
+{name:'The Researcher',icon:'🔬',desc:'Curiosity drives you deep into problems. You love understanding the why behind everything.',
+ traits:['Research','ScientificCuriosity','Precision'],color:'#8B5CF6'},
+{name:'The Problem Solver',icon:'🧩',desc:'You are energized by challenges and love finding efficient solutions to complex problems.',
+ traits:['ProblemSolving','Debugging','LogicalReasoning'],color:'#22C55E'},
+{name:'The Creator',icon:'🎨',desc:'You blend technical skill with artistic vision. Design and user experience matter deeply to you.',
+ traits:['Creativity','DesignThinking','Innovation'],color:'#EC4899'},
+{name:'The Practical Engineer',icon:'🔧',desc:'You prefer real-world applications over theory. Getting things to work reliably is your strength.',
+ traits:['Hardware','Electronics','Precision'],color:'#6B7280'},
+{name:'The Tech Explorer',icon:'🚀',desc:'You are always exploring the latest technologies and eager to experiment with cutting-edge tools.',
+ traits:['Programming','RiskTaking','Entrepreneurship'],color:'#06B6D4'},
+{name:'The Molecular Pioneer',icon:'🧪',desc:'You are fascinated by chemical processes, biological systems, and engineering at the microscopic level.',
+ traits:['ChemicalProcessing','BiologicalScience','MaterialScience','ScientificCuriosity'],color:'#EF4444'},
+{name:'The Eco-Guardian',icon:'🌱',desc:'You want to engineer solutions that protect our planet, conserve resources, and build a sustainable future.',
+ traits:['EnvironmentalAwareness','BiologicalScience','SystemsThinking'],color:'#10B981'},
+{name:'The Process Master',icon:'🏭',desc:'You love optimizing production lines, industrial workflows, and manufacturing systems for maximum scale and efficiency.',
+ traits:['IndustrialProcess','Automation','Precision','SystemsThinking'],color:'#84CC16'}
+];
+
+const QUESTIONS=[
+// === SECTION 1: Problem Solving & Technical Aptitude (12 questions) ===
+{section:0,text:"A critical system crashes during peak hours. How do you approach fixing it?",options:[
+{text:"Analyze error logs systematically and trace the root cause step by step",traits:{Debugging:3,LogicalReasoning:2,ProblemSolving:2}},
+{text:"Check hardware connections and physical components first",traits:{Hardware:3,Precision:2,MechanicalSystems:1}},
+{text:"Write a quick script to automate the diagnostic process",traits:{Programming:3,Automation:2,Innovation:1}},
+{text:"Gather the team and brainstorm possible failure points together",traits:{Leadership:2,Communication:3,SystemsThinking:2}}
+]},
+{section:0,text:"You're given a complex mathematical puzzle with no obvious solution path. What excites you most?",options:[
+{text:"Breaking it into smaller sub-problems and solving each logically",traits:{Mathematics:3,LogicalReasoning:3,ProblemSolving:2}},
+{text:"Looking for visual or spatial patterns that reveal the answer",traits:{SpatialThinking:3,PatternRecognition:3,Creativity:1}},
+{text:"Writing an algorithm to brute-force or optimize the solution",traits:{Programming:3,DataAnalysis:2,Automation:1}},
+{text:"Researching similar problems in academic papers for known approaches",traits:{Research:3,ScientificCuriosity:2,Mathematics:1}}
+]},
+{section:0,text:"A bridge you designed in a simulation keeps failing under load. What do you investigate first?",options:[
+{text:"The structural calculations and material strength assumptions",traits:{Mathematics:2,Precision:3,Construction:3}},
+{text:"The simulation software settings and boundary conditions",traits:{Programming:2,Debugging:2,SystemsThinking:2}},
+{text:"Alternative bridge designs that distribute load differently",traits:{DesignThinking:3,Innovation:2,SpatialThinking:2}},
+{text:"Real-world case studies of similar bridge failures",traits:{Research:3,ScientificCuriosity:2,Construction:1}}
+]},
+{section:0,text:"You need to optimize a process that currently takes 3 hours. Your strategy?",options:[
+{text:"Profile the process to identify the exact bottleneck",traits:{Debugging:3,LogicalReasoning:2,DataAnalysis:2}},
+{text:"Automate repetitive steps using scripts or tools",traits:{Automation:3,Programming:2,Innovation:1}},
+{text:"Redesign the entire workflow from scratch with efficiency in mind",traits:{SystemsThinking:3,DesignThinking:2,Innovation:2}},
+{text:"Benchmark against industry standards and adopt best practices",traits:{Research:2,Precision:2,Communication:1}}
+]},
+{section:0,text:"You encounter a bug that only appears under specific rare conditions. How do you handle it?",options:[
+{text:"Set up systematic test cases to reproduce the exact conditions",traits:{Debugging:3,Precision:3,LogicalReasoning:2}},
+{text:"Add comprehensive logging to trace the execution path",traits:{Programming:3,DataAnalysis:2,SystemsThinking:1}},
+{text:"Discuss with colleagues who might have seen similar patterns",traits:{Communication:3,Leadership:1,PatternRecognition:2}},
+{text:"Research the framework documentation for known edge cases",traits:{Research:3,ScientificCuriosity:2,Debugging:1}}
+]},
+{section:0,text:"You're building a device that needs to work reliably in extreme weather. What's your priority?",options:[
+{text:"Selecting materials tested for temperature and humidity tolerance",traits:{Hardware:3,Precision:3,MechanicalSystems:2}},
+{text:"Designing redundant systems so failure of one part doesn't crash everything",traits:{SystemsThinking:3,Electronics:2,Innovation:1}},
+{text:"Running mathematical simulations to predict performance under stress",traits:{Mathematics:3,DataAnalysis:2,ScientificCuriosity:1}},
+{text:"Prototyping quickly and testing iteratively in real conditions",traits:{RiskTaking:2,ProblemSolving:3,Construction:2}}
+]},
+{section:0,text:"A dataset contains inconsistencies that are affecting analysis results. Your first move?",options:[
+{text:"Write data cleaning scripts to identify and fix anomalies",traits:{Programming:3,DataAnalysis:3,Precision:1}},
+{text:"Visualize the data to spot patterns in the inconsistencies",traits:{PatternRecognition:3,DataAnalysis:2,DesignThinking:1}},
+{text:"Trace the data pipeline to find where corruption enters",traits:{SystemsThinking:3,Debugging:2,LogicalReasoning:2}},
+{text:"Consult domain experts to understand what valid data looks like",traits:{Communication:3,Research:2,ScientificCuriosity:1}}
+]},
+{section:0,text:"You're tasked with designing a circuit for a new IoT sensor. What appeals to you most?",options:[
+{text:"Designing the PCB layout and choosing optimal components",traits:{Electronics:3,Hardware:3,Precision:2}},
+{text:"Programming the microcontroller firmware for data processing",traits:{Programming:3,Automation:2,Debugging:1}},
+{text:"Optimizing power consumption for maximum battery life",traits:{Mathematics:2,Innovation:2,MechanicalSystems:1}},
+{text:"Integrating the sensor with cloud platforms for real-time dashboards",traits:{SystemsThinking:2,DataAnalysis:2,Communication:1}}
+]},
+{section:0,text:"A mechanical assembly doesn't fit together as planned. Your instinct?",options:[
+{text:"Re-measure every component and check tolerance specifications",traits:{Precision:3,MechanicalSystems:3,Mathematics:1}},
+{text:"Modify the CAD model and reprint/remachine the parts",traits:{SpatialThinking:3,DesignThinking:2,Innovation:1}},
+{text:"Analyze why the tolerances drifted during manufacturing",traits:{ProblemSolving:3,Research:2,LogicalReasoning:2}},
+{text:"Improvise an adapter piece that makes the parts work together",traits:{Creativity:3,RiskTaking:2,Construction:2}}
+]},
+{section:0,text:"You're comparing two algorithms that solve the same problem differently. How do you decide which to use?",options:[
+{text:"Run benchmarks to compare time and space complexity empirically",traits:{Programming:3,DataAnalysis:2,Debugging:1}},
+{text:"Analyze the mathematical complexity proofs for each",traits:{Mathematics:3,LogicalReasoning:3,Research:1}},
+{text:"Consider which is easier to maintain and extend in the future",traits:{SystemsThinking:3,DesignThinking:2,Communication:1}},
+{text:"Pick the newer, more innovative approach even if it's less proven",traits:{RiskTaking:3,Innovation:2,Entrepreneurship:1}}
+]},
+{section:0,text:"A construction project is behind schedule. What's your approach to getting it back on track?",options:[
+{text:"Create a detailed Gantt chart and reallocate resources precisely",traits:{Construction:3,Precision:2,Mathematics:1}},
+{text:"Identify the critical path and focus efforts on bottleneck tasks",traits:{LogicalReasoning:3,SystemsThinking:2,ProblemSolving:2}},
+{text:"Motivate the team and improve coordination between departments",traits:{Leadership:3,Communication:3,Entrepreneurship:1}},
+{text:"Streamline manufacturing steps and optimize resource assembly layout",traits:{IndustrialProcess:3,Automation:2,Precision:1}}
+]},
+{section:0,text:"You discover an unexpected pattern in experimental data. What do you do?",options:[
+{text:"Run statistical tests to verify the pattern is significant",traits:{Mathematics:3,DataAnalysis:3,Precision:2}},
+{text:"Design follow-up experiments to explore the pattern further",traits:{Research:3,ScientificCuriosity:3,Innovation:1}},
+{text:"Check the instrumentation to rule out measurement errors",traits:{Hardware:2,Electronics:2,Debugging:2}},
+{text:"Build a model to predict if the pattern holds under new conditions",traits:{PatternRecognition:3,Programming:2,LogicalReasoning:1}}
+]},
+
+// === SECTION 2: Subject Interest & Domain Curiosity (12 questions) ===
+{section:1,text:"You have a free weekend to learn something new. What draws you most?",options:[
+{text:"Building a machine learning model to predict stock trends",traits:{DataAnalysis:3,Programming:2,PatternRecognition:2}},
+{text:"Investigating how aerospace systems design aerodynamics for spacecraft and jet engines",traits:{AerospaceInterest:3,MechanicalSystems:2,ScientificCuriosity:2}},
+{text:"Experimenting with biotechnology or creating a new organic product formula",traits:{BiologicalScience:3,ChemicalProcessing:2,ScientificCuriosity:2,FoodScience:2}},
+{text:"Studying how 5G networks transmit data across cities",traits:{Electronics:3,Communication:1,SystemsThinking:2}}
+]},
+{section:1,text:"Which YouTube video title would you click on first?",options:[
+{text:"How Google's Search Algorithm Actually Works",traits:{Programming:3,DataAnalysis:2,SystemsThinking:1}},
+{text:"Inside a Bio-Reactor: How Vaccines and Medicines are Engineered",traits:{BiologicalScience:3,ScientificCuriosity:3,Research:2}},
+{text:"Building a Smart Home from Scratch with Arduino",traits:{Electronics:3,Hardware:2,Automation:2}},
+{text:"How High-Performance Polymers and Advanced Materials are Engineered",traits:{MaterialScience:3,ScientificCuriosity:2,Precision:1}}
+]},
+{section:1,text:"Your college announces an interdisciplinary project competition. Which team do you join?",options:[
+{text:"The team building an autonomous delivery robot",traits:{Automation:3,Programming:2,Hardware:2}},
+{text:"The team designing a zero-emission water purification or recycling plant",traits:{EnvironmentalAwareness:3,DesignThinking:2,Research:2}},
+{text:"The team creating a health monitoring wearable device",traits:{Electronics:3,DataAnalysis:2,Innovation:2}},
+{text:"The team engineering agricultural automation systems or sustainable food processing",traits:{FoodScience:3,EnvironmentalAwareness:2,IndustrialProcess:1}}
+]},
+{section:1,text:"Which problem would keep you up at night trying to solve?",options:[
+{text:"Making renewable energy storage 10x more efficient",traits:{ScientificCuriosity:3,Innovation:2,MechanicalSystems:2}},
+{text:"Detecting cyber attacks before they happen using AI",traits:{Programming:3,PatternRecognition:2,DataAnalysis:2}},
+{text:"Preventing environmental hazards and purifying polluted ecosystems",traits:{EnvironmentalAwareness:3,ChemicalProcessing:2,Research:2}},
+{text:"Designing smart textiles and fabrics that change properties or monitor health",traits:{TextileDesign:3,MaterialScience:2,DesignThinking:2}}
+]},
+{section:1,text:"You're browsing a bookstore. Which section do you gravitate toward?",options:[
+{text:"Algorithms, data structures, and software architecture",traits:{Programming:3,LogicalReasoning:2,SystemsThinking:1}},
+{text:"Biochemical reactions, genetics, and pharmaceutical technology",traits:{BiologicalScience:3,ChemicalProcessing:3,Research:2}},
+{text:"Robotics, embedded systems, and control theory",traits:{Automation:3,Electronics:2,Hardware:1}},
+{text:"Industrial plant operations, supply chain logistics, and packaging systems",traits:{IndustrialProcess:3,SystemsThinking:2,Precision:2}}
+]},
+{section:1,text:"A friend asks you to explain your favorite concept in engineering. What do you talk about?",options:[
+{text:"How neural networks learn to recognize images from raw pixels",traits:{DataAnalysis:3,PatternRecognition:3,Research:1}},
+{text:"How feedback loops maintain stability in control systems",traits:{Automation:3,SystemsThinking:2,Electronics:1}},
+{text:"How chemical plants refine crude resources into plastics, paints, and fuels",traits:{ChemicalProcessing:3,SystemsThinking:2,IndustrialProcess:1}},
+{text:"How processors execute billions of instructions per second",traits:{Hardware:3,Electronics:2,Programming:1}}
+]},
+{section:1,text:"Which internship listing excites you the most?",options:[
+{text:"Data Science Intern — build predictive models for healthcare outcomes",traits:{DataAnalysis:3,Research:2,Programming:2}},
+{text:"Aerospace Engineering Intern — optimize wing aerodynamics for flight vehicles",traits:{AerospaceInterest:3,MechanicalSystems:2,Precision:2}},
+{text:"Embedded Systems Intern — develop firmware for automotive sensors",traits:{Electronics:3,Hardware:2,Programming:2}},
+{text:"Textile Technology Intern — develop high-strength flame-retardant fibers",traits:{TextileDesign:3,MaterialScience:2,Precision:1}}
+]},
+{section:1,text:"Which school subject did you enjoy the most and why?",options:[
+{text:"Mathematics — the elegance of proofs and problem solving thrills me",traits:{Mathematics:3,LogicalReasoning:2,Precision:2}},
+{text:"Physics — understanding how forces and energy shape the world",traits:{ScientificCuriosity:3,MechanicalSystems:2,Research:1}},
+{text:"Computer Science — the power of creating things with code",traits:{Programming:3,Creativity:2,Innovation:1}},
+{text:"Chemistry & Biology — exploring chemical reactions and how living organisms work",traits:{ChemicalProcessing:2,BiologicalScience:3,ScientificCuriosity:2}}
+]},
+{section:1,text:"Which technological breakthrough would you most want to witness in your lifetime?",options:[
+{text:"True artificial general intelligence",traits:{Research:3,DataAnalysis:2,ScientificCuriosity:2}},
+{text:"A complete cure for chronic diseases using targeted nanomedicines",traits:{BiologicalScience:3,Research:3,Innovation:2}},
+{text:"Fully autonomous smart cities",traits:{SystemsThinking:3,Automation:2,Construction:2}},
+{text:"Brain-computer interfaces for everyone",traits:{Electronics:3,Hardware:2,Innovation:2}}
+]},
+{section:1,text:"What type of YouTube tutorial would you create if you had a channel?",options:[
+{text:"Coding tutorials — building apps, APIs, and systems from scratch",traits:{Programming:3,Communication:2,Debugging:1}},
+{text:"DIY engineering — building mechanical gadgets and machines",traits:{MechanicalSystems:3,Hardware:2,Creativity:2}},
+{text:"Electronics projects — circuits, PCBs, and microcontroller hacks",traits:{Electronics:3,Hardware:2,Automation:1}},
+{text:"Eco-friendly hacks — waste recycling, water purification, and safety systems",traits:{EnvironmentalAwareness:3,DesignThinking:2,Creativity:2}}
+]},
+{section:1,text:"Which museum exhibit fascinates you the most?",options:[
+{text:"A working model of the Large Hadron Collider",traits:{ScientificCuriosity:3,Research:3,Mathematics:1}},
+{text:"An interactive display of how self-driving cars perceive the world",traits:{Automation:3,DataAnalysis:2,Programming:1}},
+{text:"An exhibit on smart textile history — from traditional weaving to space suits",traits:{TextileDesign:3,MaterialScience:2,Creativity:2}},
+{text:"A demo of quantum computing solving real-time problems",traits:{Innovation:3,Programming:2,Mathematics:2}}
+]},
+{section:1,text:"You can shadow an engineer for a day. Who do you choose?",options:[
+{text:"A software architect at a major tech company",traits:{Programming:3,SystemsThinking:2,DesignThinking:1}},
+{text:"A chemical process engineer optimizing a large-scale pharmaceutical plant",traits:{ChemicalProcessing:3,IndustrialProcess:2,Precision:2}},
+{text:"An aerospace engineer designing supersonic commercial jets and satellite payloads",traits:{AerospaceInterest:3,MechanicalSystems:2,Precision:2}},
+{text:"A robotics engineer at a leading AI lab",traits:{Automation:3,Hardware:2,Innovation:2}}
+]},
+
+// === SECTION 3: Creative Approach & Design Thinking (12 questions) ===
+{section:2,text:"You're redesigning a public bus stop. What do you focus on first?",options:[
+{text:"Solar-powered digital displays with real-time bus tracking",traits:{Innovation:3,Electronics:2,Automation:1}},
+{text:"Ergonomic seating and weather protection using smart materials",traits:{DesignThinking:3,MechanicalSystems:2,Construction:1}},
+{text:"An app that integrates bus schedules with ride-sharing options",traits:{Programming:3,SystemsThinking:2,Communication:1}},
+{text:"Structural strength and low-maintenance materials for longevity",traits:{Construction:3,Precision:2,SpatialThinking:1}}
+]},
+{section:2,text:"A client wants a product that's both innovative and extremely reliable. How do you balance this?",options:[
+{text:"Innovate on the user interface but keep the core engineering proven",traits:{DesignThinking:3,Creativity:2,ProblemSolving:1}},
+{text:"Use cutting-edge materials tested rigorously in simulations",traits:{Innovation:2,Research:2,Precision:3}},
+{text:"Build modular architecture so innovative parts can be swapped safely",traits:{SystemsThinking:3,Programming:2,Innovation:1}},
+{text:"Prototype fast, test with real users, and iterate based on feedback",traits:{RiskTaking:2,Entrepreneurship:3,Communication:2}}
+]},
+{section:2,text:"You're designing a poster for an engineering fest. What matters most to you?",options:[
+{text:"Clean typography and a visually stunning color palette",traits:{DesignThinking:3,Creativity:3,Communication:1}},
+{text:"Infographics that clearly explain the event schedule and highlights",traits:{DataAnalysis:2,Communication:3,Precision:1}},
+{text:"An interactive QR code that links to a dynamic event website",traits:{Programming:3,Innovation:2,Automation:1}},
+{text:"A 3D-rendered engineering visual that looks futuristic",traits:{SpatialThinking:3,Creativity:2,DesignThinking:1}}
+]},
+{section:2,text:"How do you approach a blank canvas when starting a new project?",options:[
+{text:"Research existing solutions first, then identify gaps to improve on",traits:{Research:3,LogicalReasoning:2,ScientificCuriosity:1}},
+{text:"Sketch rough ideas on paper and iterate visually",traits:{DesignThinking:3,Creativity:2,SpatialThinking:2}},
+{text:"Define requirements and constraints before anything else",traits:{Precision:3,SystemsThinking:2,LogicalReasoning:1}},
+{text:"Build a quick-and-dirty prototype to explore possibilities",traits:{RiskTaking:2,Innovation:3,Programming:2}}
+]},
+{section:2,text:"You notice a commonly used product has a frustrating design flaw. What do you do?",options:[
+{text:"Sketch a redesigned version that fixes the UX issue",traits:{DesignThinking:3,Creativity:2,Innovation:2}},
+{text:"Engineer a mechanical modification that works around the flaw",traits:{MechanicalSystems:3,ProblemSolving:2,Hardware:1}},
+{text:"Write a blog post analyzing why the flaw exists and proposing solutions",traits:{Communication:3,Research:2,Entrepreneurship:1}},
+{text:"Build a competing product prototype with the flaw fixed",traits:{Entrepreneurship:3,RiskTaking:2,Innovation:2}}
+]},
+{section:2,text:"Your team is stuck on a creative block. How do you help them move forward?",options:[
+{text:"Organize a structured brainstorming session with constraints",traits:{Leadership:3,DesignThinking:2,Communication:2}},
+{text:"Show examples from completely different industries for inspiration",traits:{Creativity:3,Research:2,Innovation:2}},
+{text:"Break the problem down into technical sub-problems to solve individually",traits:{LogicalReasoning:3,ProblemSolving:2,SystemsThinking:1}},
+{text:"Suggest experimenting with rapid prototypes to discover ideas",traits:{RiskTaking:2,Innovation:3,Entrepreneurship:1}}
+]},
+{section:2,text:"You're designing a mobile app for first-year engineering students. What feature do you prioritize?",options:[
+{text:"Beautiful UI with intuitive navigation and smooth animations",traits:{DesignThinking:3,Creativity:2,Communication:1}},
+{text:"A recommendation engine that suggests study resources based on performance",traits:{DataAnalysis:3,Programming:2,PatternRecognition:2}},
+{text:"Offline access with lightweight data storage",traits:{SystemsThinking:3,Programming:2,Precision:1}},
+{text:"Social features for study groups and peer collaboration",traits:{Communication:3,Leadership:2,Entrepreneurship:1}}
+]},
+{section:2,text:"Which approach to innovation resonates most with you?",options:[
+{text:"Incremental improvements — making existing things 10% better every iteration",traits:{Precision:3,ProblemSolving:2,MechanicalSystems:1}},
+{text:"Disruptive thinking — challenging fundamental assumptions to 10x results",traits:{Innovation:3,RiskTaking:2,Entrepreneurship:2}},
+{text:"User-centered design — solving problems people didn't know they had",traits:{DesignThinking:3,Creativity:2,Communication:2}},
+{text:"Scientific discovery — finding new principles that enable entirely new technologies",traits:{Research:3,ScientificCuriosity:3,Mathematics:1}}
+]},
+{section:2,text:"A hackathon gives you 24 hours to build something. What's your strategy?",options:[
+{text:"Pick a technically challenging problem and build a robust solution",traits:{Programming:3,ProblemSolving:2,Debugging:1}},
+{text:"Focus on a stunning demo with great visuals and storytelling",traits:{DesignThinking:3,Creativity:2,Communication:2}},
+{text:"Build something practical that solves a real problem for real people",traits:{Entrepreneurship:3,Innovation:2,Leadership:1}},
+{text:"Experiment with new technologies you've never used before",traits:{RiskTaking:3,ScientificCuriosity:2,Innovation:1}}
+]},
+{section:2,text:"You're tasked with making a factory more sustainable. What's your angle?",options:[
+{text:"Install IoT sensors to monitor and optimize energy consumption in real time",traits:{Automation:3,Electronics:2,DataAnalysis:2}},
+{text:"Re-engineer assembly line workflows and industrial packaging to reduce scrap",traits:{IndustrialProcess:3,SystemsThinking:2,Precision:2}},
+{text:"Synthesize biodegradable alternatives to replace hazardous chemical agents",traits:{ChemicalProcessing:3,MaterialScience:3,EnvironmentalAwareness:2}},
+{text:"Build a digital twin of the factory for simulation-based optimization",traits:{Programming:3,SystemsThinking:2,Mathematics:1}}
+]},
+{section:2,text:"How do you feel about aesthetics in engineering products?",options:[
+{text:"Critical — a great product must look and feel premium",traits:{DesignThinking:3,Creativity:3,Innovation:1}},
+{text:"Important but secondary to functional performance",traits:{Precision:2,MechanicalSystems:2,ProblemSolving:2}},
+{text:"Aesthetics emerge naturally from elegant engineering",traits:{Mathematics:2,SystemsThinking:2,LogicalReasoning:2}},
+{text:"Irrelevant — only performance and reliability matter",traits:{Hardware:2,Precision:3,MechanicalSystems:2}}
+]},
+{section:2,text:"You're creating a presentation about your engineering project. What do you spend the most time on?",options:[
+{text:"The visual design — beautiful slides with clean data visualizations",traits:{DesignThinking:3,Creativity:2,DataAnalysis:1}},
+{text:"The technical depth — ensuring every claim is backed by data",traits:{Precision:3,Mathematics:2,Research:2}},
+{text:"The narrative — telling a compelling story that engages the audience",traits:{Communication:3,Entrepreneurship:2,Leadership:1}},
+{text:"The live demo — showing the working prototype in action",traits:{Hardware:2,Programming:2,RiskTaking:2}}
+]},
+
+// === SECTION 4: Work Style & Personality (12 questions) ===
+{section:3,text:"Your team disagrees on the technical approach for a project. What's your move?",options:[
+{text:"Present data and benchmarks to support the best approach objectively",traits:{DataAnalysis:3,LogicalReasoning:2,Precision:1}},
+{text:"Listen to everyone, then synthesize a hybrid approach",traits:{Leadership:3,Communication:2,SystemsThinking:2}},
+{text:"Suggest building quick prototypes of each approach and letting results decide",traits:{RiskTaking:2,Innovation:2,ProblemSolving:3}},
+{text:"Defer to the most experienced team member and focus on execution",traits:{Precision:2,Communication:2,MechanicalSystems:1}}
+]},
+{section:3,text:"How do you prefer to work on a complex problem?",options:[
+{text:"Alone in deep focus with no distractions for hours",traits:{Research:3,Precision:2,Mathematics:1}},
+{text:"In a small team bouncing ideas off each other",traits:{Communication:3,Leadership:2,Creativity:1}},
+{text:"With structured documentation and clear milestones",traits:{SystemsThinking:2,Precision:3,LogicalReasoning:2}},
+{text:"Freestyle — jump in, experiment, and figure it out along the way",traits:{RiskTaking:3,Innovation:2,Entrepreneurship:2}}
+]},
+{section:3,text:"A deadline is approaching and the project is only 70% done. What do you prioritize?",options:[
+{text:"Polish the core functionality to be absolutely reliable",traits:{Precision:3,ProblemSolving:2,Debugging:2}},
+{text:"Get all features working at a basic level even if rough",traits:{RiskTaking:2,Entrepreneurship:2,Innovation:1}},
+{text:"Communicate transparently with stakeholders about the status",traits:{Communication:3,Leadership:2,Precision:1}},
+{text:"Work overtime to deliver everything as originally planned",traits:{MechanicalSystems:1,Construction:1,ProblemSolving:3}}
+]},
+{section:3,text:"How do you handle failure in a project?",options:[
+{text:"Conduct a detailed post-mortem to understand what went wrong",traits:{LogicalReasoning:3,Research:2,Precision:2}},
+{text:"View it as a learning opportunity and pivot quickly",traits:{RiskTaking:3,Entrepreneurship:2,Innovation:1}},
+{text:"Feel frustrated but channel it into improving the next attempt",traits:{ProblemSolving:3,Debugging:2,MechanicalSystems:1}},
+{text:"Share the lessons with the team so everyone grows from it",traits:{Communication:3,Leadership:3,DesignThinking:1}}
+]},
+{section:3,text:"What kind of work environment brings out your best?",options:[
+{text:"A quiet lab or workspace where I can focus deeply on research",traits:{Research:3,ScientificCuriosity:2,Precision:2}},
+{text:"A dynamic startup where things change fast and ideas flow freely",traits:{Entrepreneurship:3,RiskTaking:2,Innovation:2}},
+{text:"A well-organized corporate environment with clear processes",traits:{SystemsThinking:2,Precision:3,Communication:1}},
+{text:"A chemical processing plant, food production facility, or textile mill",traits:{IndustrialProcess:3,ChemicalProcessing:2,Precision:2,FoodScience:2,TextileDesign:2}}
+]},
+{section:3,text:"When learning a new skill, what's your approach?",options:[
+{text:"Read documentation and theory thoroughly before practicing",traits:{Research:3,Mathematics:2,Precision:1}},
+{text:"Jump straight into building something and learn by doing",traits:{RiskTaking:3,Programming:2,Innovation:1}},
+{text:"Watch tutorials and follow along step by step",traits:{Communication:2,DesignThinking:1,PatternRecognition:2}},
+{text:"Find a mentor or study group to learn collaboratively",traits:{Communication:3,Leadership:2,Entrepreneurship:1}}
+]},
+{section:3,text:"How do you feel about taking risks in engineering decisions?",options:[
+{text:"I prefer calculated risks backed by data and analysis",traits:{DataAnalysis:3,LogicalReasoning:2,Precision:1}},
+{text:"I'm comfortable with big risks if the potential payoff is worth it",traits:{RiskTaking:3,Entrepreneurship:3,Innovation:1}},
+{text:"I avoid unnecessary risks — safety and reliability come first",traits:{Precision:3,MechanicalSystems:2,Construction:1}},
+{text:"I assess risks systematically and always have contingency plans",traits:{SystemsThinking:3,ProblemSolving:2,LogicalReasoning:1}}
+]},
+{section:3,text:"Your professor asks you to lead a project team. How do you feel?",options:[
+{text:"Excited — I enjoy organizing teams and driving outcomes",traits:{Leadership:3,Communication:2,Entrepreneurship:2}},
+{text:"Willing but prefer being the technical expert on the team",traits:{Programming:2,Research:2,Precision:2}},
+{text:"I'd rather collaborate as an equal than be the designated leader",traits:{Communication:2,Creativity:2,DesignThinking:1}},
+{text:"Nervous but I see it as a growth opportunity",traits:{RiskTaking:2,ProblemSolving:2,Innovation:1}}
+]},
+{section:3,text:"How detail-oriented are you?",options:[
+{text:"Extremely — I double-check everything and errors bother me deeply",traits:{Precision:3,Debugging:2,LogicalReasoning:2}},
+{text:"I focus on the big picture and rely on others for fine details",traits:{SystemsThinking:3,Leadership:2,Innovation:1}},
+{text:"I balance detail with speed — good enough is often good enough",traits:{Entrepreneurship:3,RiskTaking:2,ProblemSolving:1}},
+{text:"It depends on the domain — I'm precise where precision matters most",traits:{Mathematics:2,DataAnalysis:2,Precision:2}}
+]},
+{section:3,text:"How do you respond when someone challenges your technical opinion?",options:[
+{text:"I welcome it — good debates lead to better solutions",traits:{Communication:3,LogicalReasoning:2,ScientificCuriosity:1}},
+{text:"I present my reasoning with supporting data and evidence",traits:{DataAnalysis:3,Research:2,Precision:2}},
+{text:"I consider their perspective but stand firm if I'm confident",traits:{Leadership:3,ProblemSolving:2,RiskTaking:1}},
+{text:"I suggest we test both approaches and let results speak",traits:{Innovation:2,RiskTaking:2,ProblemSolving:2}}
+]},
+{section:3,text:"After a long day of work, what recharges you?",options:[
+{text:"Tinkering with personal projects or side experiments",traits:{Creativity:3,Innovation:2,Hardware:1}},
+{text:"Reading research papers or learning new concepts",traits:{Research:3,ScientificCuriosity:3,Mathematics:1}},
+{text:"Socializing with friends or discussing ideas with peers",traits:{Communication:3,Leadership:2,Entrepreneurship:1}},
+{text:"Nature and outdoors — gardening, hiking, or environmental volunteering",traits:{EnvironmentalAwareness:3,ScientificCuriosity:2,RiskTaking:1}}
+]},
+{section:3,text:"How important is work-life balance to you compared to career achievement?",options:[
+{text:"Balance is essential — I want a fulfilling life beyond work",traits:{Communication:2,DesignThinking:2,Creativity:2}},
+{text:"I'll sacrifice balance in the short term for long-term career goals",traits:{Entrepreneurship:3,RiskTaking:2,Leadership:1}},
+{text:"I find balance through work I love — passion eliminates burnout",traits:{Innovation:3,ScientificCuriosity:2,Research:1}},
+{text:"Structured schedule is key — I work hard during hours and switch off after",traits:{Precision:3,SystemsThinking:2,MechanicalSystems:1}}
+]},
+
+// === SECTION 5: Career Goals & Industry Vision (12 questions) ===
+{section:4,text:"In 10 years, where do you see yourself?",options:[
+{text:"Leading a tech startup that disrupts an industry",traits:{Entrepreneurship:3,Leadership:3,RiskTaking:2}},
+{text:"As a senior researcher publishing breakthrough papers",traits:{Research:3,ScientificCuriosity:3,Mathematics:1}},
+{text:"Managing large-scale infrastructure or construction projects",traits:{Construction:3,Leadership:2,SpatialThinking:1}},
+{text:"As a principal engineer designing cutting-edge systems",traits:{SystemsThinking:3,Programming:2,Innovation:2}}
+]},
+{section:4,text:"Which industry excites you the most?",options:[
+{text:"Tech — software, AI, cloud, and digital platforms",traits:{Programming:3,DataAnalysis:2,Innovation:2}},
+{text:"Manufacturing — automotive, aerospace, or heavy machinery",traits:{MechanicalSystems:3,Hardware:2,Precision:1}},
+{text:"Process & Manufacturing — chemicals, pharmaceuticals, food, or textiles",traits:{ChemicalProcessing:2,IndustrialProcess:2,MaterialScience:2}},
+{text:"Electronics — semiconductors, telecom, and embedded systems",traits:{Electronics:3,Hardware:2,Automation:1}}
+]},
+{section:4,text:"What motivates you most in your career?",options:[
+{text:"Solving problems that impact millions of people",traits:{ProblemSolving:3,Communication:2,DesignThinking:1}},
+{text:"Mastering deep technical expertise in a specialized domain",traits:{Research:3,Precision:2,ScientificCuriosity:2}},
+{text:"Building a successful business or product from scratch",traits:{Entrepreneurship:3,Leadership:2,RiskTaking:2}},
+{text:"Financial security and a stable, well-paying career path",traits:{Precision:2,MechanicalSystems:1,SystemsThinking:2}}
+]},
+{section:4,text:"Would you rather work at a:",options:[
+{text:"FAANG company (Google, Apple, Meta) — scale and impact",traits:{Programming:3,SystemsThinking:2,DataAnalysis:1}},
+{text:"Research institution (ISRO, DRDO, MIT) — knowledge and discovery",traits:{Research:3,ScientificCuriosity:3,Mathematics:1}},
+{text:"Core engineering firm (L&T, Tata, Siemens) — tangible outcomes",traits:{Construction:2,MechanicalSystems:3,Precision:1}},
+{text:"Your own startup — freedom and ownership",traits:{Entrepreneurship:3,RiskTaking:3,Innovation:2}}
+]},
+{section:4,text:"How do you feel about higher studies (M.Tech, MS, PhD)?",options:[
+{text:"Definitely planning for it — I want deep specialization",traits:{Research:3,ScientificCuriosity:2,Mathematics:2}},
+{text:"Maybe — depends on career opportunities after B.Tech",traits:{ProblemSolving:2,Communication:1,SystemsThinking:1}},
+{text:"Not interested — I'd rather gain industry experience directly",traits:{Entrepreneurship:2,RiskTaking:2,Leadership:1}},
+{text:"I'd consider MBA or management programs instead",traits:{Leadership:3,Entrepreneurship:2,Communication:2}}
+]},
+{section:4,text:"Which job title appeals to you most?",options:[
+{text:"Machine Learning Engineer",traits:{DataAnalysis:3,Programming:2,PatternRecognition:2}},
+{text:"Product Design Engineer",traits:{DesignThinking:3,MechanicalSystems:2,Creativity:2}},
+{text:"Full-Stack Software Developer",traits:{Programming:3,SystemsThinking:2,Debugging:1}},
+{text:"Site Engineer / Project Manager",traits:{Construction:3,Leadership:2,Precision:1}}
+]},
+{section:4,text:"What's your dream project to work on?",options:[
+{text:"An autonomous vehicle that navigates Indian roads safely",traits:{Automation:3,DataAnalysis:2,Electronics:2}},
+{text:"A satellite launcher or zero-emission commercial aircraft",traits:{AerospaceInterest:3,MechanicalSystems:2,Innovation:2}},
+{text:"A cybersecurity platform that protects national infrastructure",traits:{Programming:3,SystemsThinking:2,ProblemSolving:2}},
+{text:"A satellite or space exploration instrument",traits:{Electronics:2,ScientificCuriosity:3,Precision:2}}
+]},
+{section:4,text:"How do you feel about interdisciplinary work — combining multiple engineering fields?",options:[
+{text:"Love it — the best innovations happen at the intersection of fields",traits:{Innovation:3,SystemsThinking:2,Creativity:1}},
+{text:"Prefer depth — mastering one field thoroughly is more impactful",traits:{Research:3,Precision:2,ScientificCuriosity:1}},
+{text:"Open to it if it serves the project goal",traits:{ProblemSolving:2,Communication:2,Leadership:1}},
+{text:"Excited by it — I can't pick just one discipline",traits:{RiskTaking:2,Entrepreneurship:2,DesignThinking:2}}
+]},
+{section:4,text:"If you could solve one global challenge through engineering, what would it be?",options:[
+{text:"Climate change — carbon capture, resource recycling, and green chemical plants",traits:{EnvironmentalAwareness:3,ChemicalProcessing:2,ScientificCuriosity:2}},
+{text:"Digital access — bringing affordable tech and internet to underserved communities",traits:{Electronics:2,Communication:3,Entrepreneurship:2}},
+{text:"Healthcare — advanced medical machinery, biotech therapies, and drug delivery",traits:{BiologicalScience:3,Research:2,Precision:2}},
+{text:"Housing — earthquake-resistant, affordable, and sustainable housing for all",traits:{Construction:3,SpatialThinking:2,Precision:1}}
+]},
+{section:4,text:"How important is salary in your career decision?",options:[
+{text:"Very important — I want to earn well and build financial freedom",traits:{Programming:2,Entrepreneurship:2,DataAnalysis:1}},
+{text:"Important but passion for the work matters more",traits:{ScientificCuriosity:2,Innovation:2,Creativity:2}},
+{text:"I care more about impact — salary will follow great work",traits:{Research:2,Leadership:2,Communication:1}},
+{text:"Stability matters more than high salary — I want a reliable career path",traits:{Precision:2,MechanicalSystems:2,Construction:2}}
+]},
+{section:4,text:"Do you see yourself as someone who creates products or solves problems?",options:[
+{text:"Definitely a creator — I want to build products people love",traits:{Creativity:3,DesignThinking:2,Entrepreneurship:2}},
+{text:"A problem solver — give me a hard challenge and I'll crack it",traits:{ProblemSolving:3,LogicalReasoning:2,Debugging:2}},
+{text:"Both — I solve problems by creating innovative products",traits:{Innovation:3,Programming:2,SystemsThinking:1}},
+{text:"Neither — I'm more of a researcher who advances knowledge",traits:{Research:3,ScientificCuriosity:3,Mathematics:1}}
+]},
+{section:4,text:"Final question: what legacy do you want to leave through engineering?",options:[
+{text:"Software and AI systems that transform how the world works",traits:{Programming:3,DataAnalysis:2,Innovation:2}},
+{text:"Physical infrastructure — buildings, roads, and cities that stand for centuries",traits:{Construction:3,SpatialThinking:2,MechanicalSystems:1}},
+{text:"Scientific discoveries that expand the boundaries of human knowledge",traits:{Research:3,ScientificCuriosity:3,Innovation:1}},
+{text:"Products and businesses that improve everyday life for millions",traits:{Entrepreneurship:3,DesignThinking:2,Leadership:2}}
+]}
+];
+
+/* ========== RENDER HOMEPAGE & HISTORY ========== */
+let loadedHistory = [];
+
+async function saveResultsToDatabase() {
+  const session = getSession();
+  if (!session || !session.id) {
+    console.warn('Cannot save assessment: user not logged in.');
+    return;
+  }
+  const results = window.assessmentResults;
+  if (!results) {
+    console.warn('Cannot save assessment: no results available.');
+    return;
+  }
+  
+  try {
+    const payload = {
+      userId: session.id,
+      resultData: {
+        traitScores: results.traitScores,
+        topBranches: results.topBranches.map(b => ({
+          id: b.id || '',
+          name: b.name || '',
+          cluster: b.cluster || '',
+          matchScore: b.matchScore || 0,
+          desc: b.desc || '',
+          difficulty: b.difficulty || 0,
+          futureScope: b.futureScope || 0,
+          coreSkills: b.coreSkills || [],
+          whoSuits: b.whoSuits || ''
+        })),
+        dnaType: {
+          name: results.dnaType.name || '',
+          icon: results.dnaType.icon || '',
+          desc: results.dnaType.desc || ''
+        },
+        sectionScores: results.sectionScores,
+        answers: answers,
+        allMatches: results.allMatches.map(b => ({
+          id: b.id || '',
+          name: b.name || '',
+          cluster: b.cluster || '',
+          matchScore: b.matchScore || 0,
+          desc: b.desc || ''
+        }))
+      }
+    };
+    const res = await authApi('saveBranchTestResult', payload);
+    if (res.ok) {
+      console.log('Assessment history saved successfully!');
+      loadHistoryList();
+    } else {
+      console.error('Failed to save assessment to history:', res.error);
+    }
+  } catch (e) {
+    console.error('Error saving assessment to history:', e);
+  }
+}
+
+async function loadHistoryList() {
+  const session = getSession();
+  const historySec = document.getElementById('history-section');
+  const container = document.getElementById('history-list-container');
+  if (!historySec || !container) return;
+
+  if (!session || !session.id) {
+    historySec.style.display = 'block';
+    container.innerHTML = `
+      <div class="guest-history-card">
+        <div style="margin-bottom: 16px; color: var(--red); display: flex; justify-content: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.778-7.778zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; font-family: Lexend, sans-serif;">Save Your Progress</h3>
+        <p style="color: var(--text-sec); margin-bottom: 24px; font-size: 0.95rem;">
+          Sign in to save your branch prediction test history, view previous reports anytime, and automatically fill your details.
+        </p>
+        <a href="auth.html?redirect=Branch.html" class="btn btn-primary">Sign In / Register Now</a>
+      </div>
+    `;
+    return;
+  }
+
+  try {
+    const res = await authApi('getBranchTestHistory', { userId: session.id });
+    historySec.style.display = 'block';
+    if (res.ok && res.data && res.data.length > 0) {
+      loadedHistory = res.data;
+      
+      let html = '';
+      res.data.forEach((item, idx) => {
+        const dateObj = new Date(item.dateStr || item.createdAt);
+        const formattedDate = dateObj.toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        
+        const topBranch = item.topBranches?.[0] || { name: 'Engineering', matchScore: 0 };
+        const dna = item.dnaType || { name: 'Assessment', icon: '🧬' };
+
+        html += `
+          <div class="history-card">
+            <div class="history-card-header">
+              <span class="history-date">${formattedDate}</span>
+              <span class="history-dna-badge">${dna.name}</span>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-sec); letter-spacing: 0.5px;">Top Predicted Branch</div>
+              <div class="history-branch-title" style="font-family: Lexend, sans-serif;">${topBranch.name}</div>
+              <div class="history-match">Match Score: ${topBranch.matchScore || topBranch.match}%</div>
+            </div>
+            <div class="history-card-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+              <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="loadPastAssessment(${idx})">View Report</button>
+              <button class="btn btn-primary btn-sm" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;" onclick="downloadHistoryPDF(${idx}, this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </button>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    } else {
+      loadedHistory = [];
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: var(--card-bg); border: 1.5px dashed var(--border); border-radius: var(--radius); color: var(--text-sec);">
+          <div style="margin-bottom: 12px; color: var(--red); display: flex; justify-content: center;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; font-family: Lexend, sans-serif; color: var(--text);">No Assessment History Yet</h3>
+          <p style="font-size: 0.9rem; max-width: 400px; margin: 0 auto;">
+            You haven't completed any engineering DNA assessments yet. Start the test above to save and view your recommendations here!
+          </p>
+        </div>
+      `;
+    }
+  } catch (e) {
+    console.error('Error fetching history:', e);
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--red); font-weight: 600;">
+        ⚠️ Failed to load assessment history. Please refresh the page.
+      </div>
+    `;
+  }
+}
+
+async function downloadHistoryPDF(idx, btn) {
+  const originalResults = window.assessmentResults;
+  const originalAnswers = answers;
+  const report = loadedHistory[idx];
+  if (!report) return;
+
+  // Temporarily set active results to this report
+  window.assessmentResults = {
+    traitScores: report.traitScores,
+    topBranches: report.topBranches,
+    dnaType: report.dnaType,
+    sectionScores: report.sectionScores,
+    allMatches: report.allMatches || []
+  };
+  answers = report.answers || [];
+
+  try {
+    const dateObj = new Date(report.dateStr || report.createdAt);
+    const reportDate = dateObj.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+    await generatePDF(false, reportDate);
+  } catch (err) {
+    console.error('Failed to download report PDF:', err);
+    alert('Failed to generate report PDF. Please try viewing it first.');
+  } finally {
+    // Restore original active state
+    window.assessmentResults = originalResults;
+    answers = originalAnswers;
+  }
+}
+
+function loadPastAssessment(idx) {
+  const report = loadedHistory[idx];
+  if (!report) return;
+  
+  window.assessmentResults = {
+    traitScores: report.traitScores,
+    topBranches: report.topBranches,
+    dnaType: report.dnaType,
+    sectionScores: report.sectionScores,
+    allMatches: report.allMatches || []
+  };
+  
+  if (report.answers) {
+    answers = report.answers;
+  }
+  
+  showResults();
+}
+
+function renderHomepage(){
+  loadHistoryList();
+}
+function toggleFaq(i){document.getElementById('faq-'+i).classList.toggle('active')}
+
+/* ========== ASSESSMENT ENGINE ========== */
+let currentQuestion=0;
+let answers=new Array(60).fill(null);
+
+function renderQuestion(){
+  const q=QUESTIONS[currentQuestion];
+  const sec=SECTION_NAMES[q.section];
+  document.getElementById('progressSection').textContent=`Section ${q.section+1}: ${sec}`;
+  document.getElementById('progressCount').textContent=`${currentQuestion+1} / 60`;
+  document.getElementById('progressFill').style.width=((currentQuestion+1)/60*100)+'%';
+  // Section dots
+  let dots='';
+  for(let i=0;i<5;i++){
+    const sectionQs=answers.slice(i*12,(i+1)*12);
+    const completed=sectionQs.every(a=>a!==null);
+    const active=q.section===i;
+    dots+=`<div class="section-dot ${completed?'completed':''} ${active?'active':''}"></div>`;
+  }
+  document.getElementById('sectionDots').innerHTML=dots;
+  // Question card
+  const letters=['A','B','C','D'];
+  document.getElementById('questionContainer').innerHTML=`
+    <div class="question-card">
+      <div class="question-section-tag">${sec}</div>
+      <div class="question-text">${currentQuestion+1}. ${q.text}</div>
+      <div class="options">
+        ${q.options.map((o,i)=>`
+          <div class="option ${answers[currentQuestion]===i?'selected':''}" onclick="selectOption(${i})" role="button" tabindex="0" aria-label="Option ${letters[i]}">
+            <div class="option-letter">${letters[i]}</div>
+            <div>${o.text}</div>
+          </div>`).join('')}
+      </div>
+      <div class="question-nav">
+        <button class="btn btn-secondary btn-sm" onclick="prevQuestion()" ${currentQuestion===0?'disabled style="opacity:.4;pointer-events:none"':''}>← Back</button>
+        <button class="btn btn-primary btn-sm" onclick="nextQuestion()">${currentQuestion===59?'Finish Assessment →':'Next →'}</button>
+      </div>
+    </div>`;
+}
+
+function selectOption(idx){
+  answers[currentQuestion]=idx;
+  // Update UI smoothly without a full re-render
+  const options = document.querySelectorAll('.option');
+  options.forEach((opt, i) => {
+    if (i === idx) {
+      opt.classList.add('selected');
+    } else {
+      opt.classList.remove('selected');
+    }
+  });
+  // Auto-advance after a brief delay
+  setTimeout(() => {
+    nextQuestion();
+  }, 350);
+}
+
+function prevQuestion(){if(currentQuestion>0){currentQuestion--;renderQuestion()}}
+function nextQuestion(){
+  if(answers[currentQuestion]===null){
+    document.querySelectorAll('.option').forEach(o=>{
+      o.style.transform = 'scale(1.02)';
+      setTimeout(() => o.style.transform = 'none', 150);
+    });
+    return;
+  }
+  if(currentQuestion<59){currentQuestion++;renderQuestion();window.scrollTo({top:0,behavior:'smooth'})}
+  else{calculateResults()}
+}
+
+/* ========== SCORING ENGINE ========== */
+function calculateTraitScores(){
+  const scores={};TRAITS.forEach(t=>scores[t]=0);
+  QUESTIONS.forEach((q,qi)=>{
+    if(answers[qi]===null)return;
+    const chosen=q.options[answers[qi]];
+    Object.entries(chosen.traits).forEach(([trait,weight])=>{scores[trait]+=weight});
+  });
+  // Normalize to 0-100
+  const maxScore=Math.max(...Object.values(scores),1);
+  TRAITS.forEach(t=>scores[t]=Math.round(scores[t]/maxScore*100));
+  return scores;
+}
+
+function cosineSimilarity(a,b){
+  let dot=0,magA=0,magB=0;
+  TRAITS.forEach(t=>{
+    const va=a[t]||0,vb=b[t]||0;
+    dot+=va*vb;magA+=va*va;magB+=vb*vb;
+  });
+  return magA&&magB?dot/(Math.sqrt(magA)*Math.sqrt(magB)):0;
+}
+
+function calculateResults(){
+  if (allowedBranches === null) {
+    allowedBranchesPromise.then(calculateResults);
+    return;
+  }
+  const traitScores=calculateTraitScores();
+  // Calculate branch matches
+  let matches=BRANCHES.filter(branch => {
+    return allowedBranches.size === 0 || allowedBranches.has(branch.name.trim().toLowerCase());
+  }).map(branch=>{
+    const sim=cosineSimilarity(traitScores,
+      Object.fromEntries(TRAITS.map(t=>[t,(branch.traitVector[t]||0)*100])));
+    return{...branch,matchScore:Math.round(sim*100)};
+  });
+  matches.sort((a,b)=>b.matchScore-a.matchScore);
+  
+  // Apply cluster diversity and family uniqueness (Top 7)
+  const top=[];
+  const clusterCount={};
+  const seenFamilies=new Set();
+  
+  // First pass: try with cluster limits and family uniqueness
+  for(const m of matches){
+    if(m.family && seenFamilies.has(m.family)) continue;
+    const cc=clusterCount[m.cluster]||0;
+    const maxForCluster=CLUSTERS[m.cluster]?.max||2;
+    if(cc<maxForCluster){
+      top.push(m);
+      clusterCount[m.cluster]=cc+1;
+      if(m.family) seenFamilies.add(m.family);
+    }
+    if(top.length>=7)break;
+  }
+  
+  // Second pass: if we still don't have 7, relax cluster limit but keep family uniqueness
+  if(top.length<7){
+    for(const m of matches){
+      if(top.includes(m)) continue;
+      if(m.family && seenFamilies.has(m.family)) continue;
+      top.push(m);
+      if(m.family) seenFamilies.add(m.family);
+      if(top.length>=7)break;
+    }
+  }
+
+  // Ensure at least one of the top 2 is from computer-it or ai-data cluster if there's any interest
+  const hasCompOrAiInTop2 = top.slice(0, 2).some(b => b.cluster === 'computer-it' || b.cluster === 'ai-data');
+  if (!hasCompOrAiInTop2) {
+    const compBranch = matches.find(m => m.cluster === 'computer-it' || m.cluster === 'ai-data');
+    if (compBranch && compBranch.matchScore >= 30) {
+      const existingIdx = top.findIndex(b => b.id === compBranch.id);
+      if (existingIdx !== -1) {
+        top.splice(existingIdx, 1);
+      } else {
+        top.pop();
+      }
+      top.splice(1, 0, compBranch);
+    }
+  }
+
+  // Determine DNA type
+  const dnaType=determineDNAType(traitScores);
+  // Calculate section scores cleanly by averaging the normalized trait scores of their core traits
+  const sectionTraits = [
+    ['ProblemSolving', 'Debugging', 'LogicalReasoning', 'Mathematics', 'Precision'],
+    ['ScientificCuriosity', 'Programming', 'Hardware', 'Electronics', 'MechanicalSystems', 'AerospaceInterest', 'BiologicalScience', 'ChemicalProcessing'],
+    ['Creativity', 'DesignThinking', 'Innovation', 'SpatialThinking', 'PatternRecognition', 'TextileDesign', 'MaterialScience'],
+    ['Leadership', 'Communication', 'RiskTaking', 'Construction', 'Automation', 'EnvironmentalAwareness'],
+    ['Entrepreneurship', 'Research', 'SystemsThinking', 'DataAnalysis', 'IndustrialProcess']
+  ];
+  const sectionScores = sectionTraits.map(traits => {
+    const sum = traits.reduce((acc, t) => acc + (traitScores[t] || 0), 0);
+    return Math.round(sum / traits.length);
+  });
+  window.assessmentResults={traitScores,topBranches:top,allMatches:matches,dnaType,sectionScores};
+  saveResultsToDatabase();
+  showResults();
+}
+
+function determineDNAType(scores){
+  let bestType=DNA_TYPES[0],bestScore=0;
+  DNA_TYPES.forEach(dt=>{
+    const avg=dt.traits.reduce((sum,t)=>sum+(scores[t]||0),0)/dt.traits.length;
+    if(avg>bestScore){bestScore=avg;bestType=dt}
+  });
+  return bestType;
+}
+
+/* ========== RESULTS RENDERER ========== */
+function renderResults(){
+  const{traitScores,topBranches,dnaType,sectionScores,allMatches}=window.assessmentResults;
+  const rc=document.getElementById('resultsContent');
+  rc.innerHTML=`
+    <div class="results-hero">
+      <div class="dna-badge">
+        <span class="badge-icon" style="color: #fff; margin-right: 8px; display: inline-flex; align-items: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 10.5c0 0 3-6 7.5-6s7.5 6 7.5 6"/>
+            <path d="M4.5 13.5c0 0 3 6 7.5 6s7.5-6 7.5-6"/>
+            <path d="M6 8v8M10 5v14M14 5v14M18 8v8"/>
+          </svg>
+        </span>
+        ${dnaType.name}
+      </div>
+      <h1 class="results-name">Your Engineering DNA</h1>
+      <p class="results-sub">${dnaType.desc}</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px">
+        <button class="btn btn-primary" onclick="generatePDF()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF Report
+        </button>
+        <button class="btn btn-secondary" onclick="showHome()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Back to Home
+        </button>
+      </div>
+    </div>
+
+    <div class="results-grid">
+      <div class="chart-card">
+        <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v12"/><path d="M8 10c0-2.21 1.79-4 4-4"/><path d="M12 18c2.21 0 4-1.79 4-4"/></svg>
+          Trait Profile
+        </h3>
+        <div class="chart-container" style="position:relative;width:100%;height:300px;margin-top:15px">
+          <canvas id="radarChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M3 20h18"/></svg>
+          Section Scores
+        </h3>
+        <div class="chart-container" style="position:relative;width:100%;height:300px;margin-top:15px">
+          <canvas id="sectionChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card mb-40">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><circle cx="12" cy="12" r="10"/></svg>
+        Detailed Section-Wise Analysis
+      </h3>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:15px">
+        ${SECTION_NAMES.map((name, i) => {
+          const score = sectionScores[i];
+          let analysis = '';
+          if (i === 0) {
+            analysis = score > 75 ? "Your exceptionally strong problem-solving and technical aptitude indicates a highly logical, analytical mind. You excel at debugging, tracing root causes, and breaking down complex challenges into manageable components. This technical rigor is essential for engineering fields that require deep logical reasoning and systems-level debugging." : (score >= 50 ? "You show a solid foundation in logical reasoning and problem solving. You are comfortable working through technical challenges and can trace system failures when given structured instructions. Continuing to build hands-on debugging skills will further strengthen your analytical capacity." : "You prefer practical, high-level solutions over deep mathematical or algorithm-heavy debugging. While you can resolve standard technical issues, you are more comfortable working in collaborative or design-focused environments rather than pure back-end system analysis.");
+          } else if (i === 1) {
+            analysis = score > 75 ? "You demonstrate an active curiosity and deep interest in engineering domains. You are eager to learn how complex systems operate—from AI models to mechanical engines. This curiosity drives you to research new technologies independently, making you well-suited for research-heavy and bleeding-edge disciplines." : (score >= 50 ? "Your interest in engineering concepts is balanced. You enjoy learning about new technologies and their real-world applications, though you prefer focus areas that have direct, practical utility rather than purely theoretical research." : "Your curiosity is selective and focused on immediate, tangible outcomes. You are less interested in theoretical principles and prefer to focus on application-ready tools and methodologies.");
+          } else if (i === 2) {
+            analysis = score > 75 ? "You have a strong creative approach and think like a designer. You prioritize user experience, aesthetics, and user-centric design in engineering products. This creative mindset is critical for modern engineering roles where human-machine interaction, product design, and front-end experience are key." : (score >= 50 ? "You appreciate the role of design and aesthetics, but prioritize functional performance and reliability. You are capable of designing user-friendly interfaces when required, balancing technical specifications with user needs." : "You are a pragmatist who believes that functionality and performance are the only metrics that matter. You prefer core engineering tasks where structural stability and algorithmic efficiency outweigh visual design.");
+          } else if (i === 3) {
+            analysis = score > 75 ? "Your work style reflects strong leadership, collaborative communication, and adaptability. You are comfortable managing team dynamics, resolving conflicts, and taking calculated risks. This makes you an excellent candidate for project management, startup environments, and leadership roles." : (score >= 50 ? "You have a collaborative work style. You work well in team settings and can take on leadership roles when needed, though you are equally comfortable executing tasks independently as a technical contributor." : "You prefer quiet, individual focus with minimal distractions. You work best with structured documentation, clear specifications, and defined boundaries, rather than highly fluid or collaborative startup team settings.");
+          } else if (i === 4) {
+            analysis = score > 75 ? "You have a clear, forward-looking industry vision and highly ambitious career goals. Whether it is launching a startup or leading cutting-edge research, you are driven by long-term impact and innovation. You align well with fast-paced, high-growth tech sectors." : (score >= 50 ? "You seek a stable and progressive career path. You value financial security, career stability, and a healthy work-life balance, aligning well with established engineering firms and core industrial sectors." : "Your career focus is highly practical and immediate. You prefer concrete, hands-on engineering work over long-term strategic management, and you value job security and immediate execution.");
+          }
+          return `
+            <div style="padding:16px;border:1px solid var(--card-border);border-radius:var(--radius-sm);background:var(--bg-alt);text-align:left">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                <strong style="color:var(--red);font-size:0.95rem">Section ${i+1}: ${name}</strong>
+                <span style="font-weight:700;color:var(--text);font-size:0.95rem">${score}%</span>
+              </div>
+              <p style="font-size:0.85rem;color:var(--text-sec);line-height:1.6;margin:0">${analysis}</p>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+
+    <div class="text-center mb-40">
+      <p class="section-label">Your Results</p>
+      <h2 class="section-title">Top 7 <span class="text-gradient">Branch Recommendations</span></h2>
+      <p class="section-sub">Click any branch to explore its detailed roadmap, career paths, and action plan.</p>
+    </div>
+
+    <div class="cards-grid cards-grid-2 mb-40" id="branchCardsGrid">
+      ${topBranches.map((b,i)=>`
+        <div class="branch-card" onclick="openRoadmap('${b.id}',${b.matchScore})">
+          <div class="branch-rank">#${i+1}</div>
+          <h3>${b.name}</h3>
+          <div class="branch-match">${b.matchScore}% Match</div>
+          <p>${b.desc}</p>
+          <div class="branch-tags">
+            ${b.coreSkills.slice(0,4).map(s=>`<span class="branch-tag">${s}</span>`).join('')}
+          </div>
+          <div class="branch-indicators">
+            <span class="indicator">Difficulty: ${'★'.repeat(b.difficulty)}${'☆'.repeat(5-b.difficulty)}</span>
+            <span class="indicator">Future Scope: ${'★'.repeat(b.futureScope)}${'☆'.repeat(5-b.futureScope)}</span>
+          </div>
+        </div>`).join('')}
+    </div>
+
+    <div class="chart-card mb-40">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M3 20h18"/></svg>
+        Branch Comparison
+      </h3>
+      <div class="chart-container" style="position:relative;width:100%;height:320px;margin-top:15px">
+        <canvas id="comparisonChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card mb-40">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        Comparison Matrix
+      </h3>
+      <div style="overflow-x:auto">
+        <table class="comparison-table">
+          <thead><tr><th>Rank</th><th>Branch</th><th>Match</th><th>Cluster</th><th>Difficulty</th><th>Future Scope</th></tr></thead>
+          <tbody>
+            ${topBranches.map((b,i)=>`<tr>
+              <td>#${i+1}</td><td><strong>${b.name}</strong></td><td style="color:var(--red);font-weight:700">${b.matchScore}%</td>
+              <td>${CLUSTERS[b.cluster]?.name||b.cluster}</td>
+              <td>${'★'.repeat(b.difficulty)}${'☆'.repeat(5-b.difficulty)}</td>
+              <td>${'★'.repeat(b.futureScope)}${'☆'.repeat(5-b.futureScope)}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;padding:40px 0;width:100%">
+      <button class="btn btn-primary btn-lg" style="flex:1;min-width:280px" onclick="generatePDF()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Complete PDF Report
+      </button>
+      <button class="btn btn-secondary btn-lg" style="flex:1;min-width:280px" onclick="retakeAssessment()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        Retake Assessment
+      </button>
+    </div>`;
+
+  renderCharts(traitScores,sectionScores,topBranches);
+}
+
+function retakeAssessment(){answers=new Array(60).fill(null);currentQuestion=0;startAssessment()}
+
+function renderCharts(traits,sectionScores,topBranches){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const textColor=isDark?'#f1f1f1':'#111827';
+  const gridColor=isDark?'rgba(255,255,255,.15)':'rgba(17,24,39,.12)';
+
+  // Set global Chart.js defaults for text and border colors to align with active theme
+  Chart.defaults.color = textColor;
+  Chart.defaults.borderColor = gridColor;
+
+  if (window.radarChartInstance) window.radarChartInstance.destroy();
+  if (window.sectionChartInstance) window.sectionChartInstance.destroy();
+  if (window.comparisonChartInstance) window.comparisonChartInstance.destroy();
+
+  const topTraits=Object.entries(traits).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  window.radarChartInstance = new Chart(document.getElementById('radarChart'),{type:'radar',data:{
+    labels:topTraits.map(t=>{const n=t[0].replace(/([A-Z])/g,' $1').trim();return (window.innerWidth<480&&n.includes(' '))?n.split(' '):n;}),
+    datasets:[{label:'Your Profile',data:topTraits.map(t=>t[1]),
+      backgroundColor:'rgba(220,38,38,.12)',borderColor:'#dc2626',borderWidth:2,pointBackgroundColor:'#dc2626'}]},
+    options:{responsive:true,maintainAspectRatio:false,scales:{r:{beginAtZero:true,max:100,
+      ticks:{color:textColor,backdropColor:'transparent'},grid:{color:gridColor},
+      pointLabels:{color:textColor,font:{size:window.innerWidth<480?9:11,family:'Inter',weight:'600'}}}},
+      plugins:{legend:{display:false}}}});
+
+  window.sectionChartInstance = new Chart(document.getElementById('sectionChart'),{type:'bar',data:{
+    labels:SECTION_NAMES.map(s=>s.split('&')[0].trim()),
+    datasets:[{label:'Score',data:sectionScores,backgroundColor:['#dc2626','#ea580c','#f59e0b','#16a34a','#2563eb'],
+      borderRadius:8,barThickness:window.innerWidth < 480 ? 12 : 20}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,scales:{
+      x:{beginAtZero:true,max:100,ticks:{color:textColor},grid:{color:gridColor}},
+      y:{ticks:{color:textColor,font:{family:'Inter',size:window.innerWidth < 480 ? 9 : 11,weight:'600'}},grid:{display:false}}},
+      plugins:{legend:{display:false}}}});
+
+  window.comparisonChartInstance = new Chart(document.getElementById('comparisonChart'),{type:'bar',data:{
+    labels:topBranches.map(b=>{
+      const name = b.name;
+      return window.innerWidth < 480 ? (name.length > 12 ? name.substring(0, 12) + '...' : name) : (name.length > 20 ? name.substring(0, 20) + '...' : name);
+    }),
+    datasets:[{label:'Match %',data:topBranches.map(b=>b.matchScore),
+      backgroundColor:topBranches.map((_,i)=>`rgba(220,38,38,${1-i*0.15})`),borderRadius:8,barThickness:window.innerWidth < 480 ? 18 : 32}]},
+    options:{responsive:true,maintainAspectRatio:false,scales:{
+      y:{beginAtZero:true,max:100,ticks:{color:textColor},grid:{color:gridColor}},
+      x:{ticks:{color:textColor,font:{family:'Inter',size:window.innerWidth < 480 ? 9 : 10,weight:'600'}},grid:{display:false}}},
+      plugins:{legend:{display:false}}}});
+}
+
+/* ========== ROADMAP MODAL ========== */
+function openRoadmap(branchId,matchScore){
+  const branch=BRANCHES.find(b=>b.id===branchId);
+  const rm=ROADMAPS[branchId];
+  if(!branch||!rm)return;
+  const mc=document.getElementById('roadmapModalContent');
+  mc.innerHTML=`
+    <button class="modal-close" onclick="closeModal('roadmapModal')">✕</button>
+    <div class="roadmap-header">
+      <h2>${branch.name}</h2>
+      <div class="rm-match" style="display:inline-flex;align-items:center;gap:6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        ${matchScore}% Match with Your Profile
+      </div>
+      <p style="color:var(--text-sec);margin-top:8px">${branch.desc}</p>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5.5 5.5 0 0 0 12.5 2.5a5.5 5.5 0 0 0-5.5 5.5c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+        Why This Branch Fits You
+      </h3>
+      <p>${rm.whyFits}</p>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Who This Branch Suits
+      </h3>
+      <p>${branch.whoSuits}</p>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+        4-Year Academic Journey
+      </h3>
+      <div class="year-grid">${rm.yearByYear.map(y=>`
+        <div class="year-card"><h4>${y.year}</h4><ul>${y.items.map(i=>`<li>• ${i}</li>`).join('')}</ul></div>`).join('')}
+      </div>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Core Subjects
+      </h3>
+      <ul class="roadmap-list">${rm.coreSubjects.map(s=>`<li>${s}</li>`).join('')}</ul>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Essential Tools & Technologies
+      </h3>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">${rm.tools.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Project Ideas
+      </h3>
+      <ul class="roadmap-list">${rm.projects.map(p=>`<li>${p}</li>`).join('')}</ul>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        Internship Strategy
+      </h3>
+      <p>${rm.internshipStrategy}</p>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Skill-Building Milestones
+      </h3>
+      <ul class="roadmap-list">${rm.skillMilestones.map(s=>`<li>${s}</li>`).join('')}</ul>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Career Pathways
+      </h3>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">${rm.careerPaths.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/><line x1="9" y1="16" x2="15" y2="16"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/></svg>
+        Top Recruiters & Industries
+      </h3>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">${rm.topRecruiters.map(r=>`<span class="chip">${r}</span>`).join('')}</div>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Salary Direction
+      </h3>
+      <p>${rm.salaryDirection}</p>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+        Higher Education Options
+      </h3>
+      <ul class="roadmap-list">${rm.higherEd.map(h=>`<li>${h}</li>`).join('')}</ul>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Future Trends
+      </h3>
+      <ul class="roadmap-list">${rm.futureTrends.map(f=>`<li>${f}</li>`).join('')}</ul>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Risks & Challenges
+      </h3>
+      <ul class="roadmap-list">${rm.risks.map(r=>`<li>${r}</li>`).join('')}</ul>
+    </div>
+
+    <div class="roadmap-section">
+      <h3 style="display:flex;align-items:center;gap:8px;font-family:Lexend,sans-serif;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Your Action Plan
+      </h3>
+      <ul class="roadmap-list">${rm.actionPlan.map(a=>`<li>${a}</li>`).join('')}</ul>
+    </div>
+  `;
+  openModal('roadmapModal');
+}
+
+/* ========== SAMPLE REPORT ========== */
+function openSampleReport(){
+  const mc=document.getElementById('sampleReportContent');
+  mc.innerHTML=`
+    <button class="modal-close" onclick="closeModal('sampleReportModal')">✕</button>
+    <h2 style="text-align:center;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;font-family:Lexend,sans-serif;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Sample Report Preview
+    </h2>
+    <p style="text-align:center;color:var(--text-sec);margin-bottom:20px">This is a preview of the actual report quality. Your personalized report will contain your unique analysis.</p>
+    <div style="text-align:center;margin-bottom:30px">
+      <button class="btn btn-primary btn-sm" onclick="generatePDF(true)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Sample PDF Report
+      </button>
+    </div>
+
+    <div class="sample-page" style="background:var(--grad);color:#fff;text-align:center;padding:60px 30px;border-radius:var(--radius)">
+      <p style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;opacity:.8">ENGINEERING DNA ASSESSMENT</p>
+      <h1 style="font-size:2rem;margin:20px 0">Personalized Career Intelligence Report</h1>
+      <div style="height:2px;width:60px;background:rgba(255,255,255,.5);margin:20px auto"></div>
+      <p style="font-size:1.2rem;margin-top:20px">Prepared for: <strong>Arjun Mehta</strong></p>
+      <p style="margin-top:8px;opacity:.9">Assessment Date: June 15, 2026</p>
+      <div style="margin-top:30px;display:inline-block;background:rgba(255,255,255,.2);padding:12px 28px;border-radius:50px;font-weight:700">The Innovator</div>
+      <p style="margin-top:16px;font-size:1.1rem">Top Match: <strong>AI & Machine Learning — 94%</strong></p>
+    </div>
+
+    <div class="sample-page">
+      <h2 style="color:var(--red);margin-bottom:16px">Executive Summary</h2>
+      <p>Arjun demonstrates a strong profile characterized by analytical thinking, creative problem-solving, and a deep curiosity for emerging technologies. His trait analysis reveals high scores in Programming (92), Pattern Recognition (88), and Innovation (85), placing him firmly in the <strong>Innovator</strong> archetype.</p>
+      <p style="margin-top:12px">His top 7 branch recommendations span five distinct clusters, ensuring diverse career pathways. Artificial Intelligence and Machine Learning emerges as the strongest match at 94%, followed by Computer Science and Engineering at 89%.</p>
+    </div>
+
+    <div class="sample-page">
+      <h2 style="color:var(--red);margin-bottom:16px">Trait Analysis</h2>
+      <p style="margin-bottom:16px">Based on 60 questions across 5 assessment sections:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        ${[['Programming',92],['Pattern Recognition',88],['Innovation',85],['Mathematics',82],['Research',78],['Data Analysis',76],['Problem Solving',74],['Logical Reasoning',72]].map(([t,v])=>`
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:.85rem;min-width:130px">${t}</span>
+            <div style="flex:1;height:8px;background:var(--card-border);border-radius:4px;overflow:hidden">
+              <div style="height:100%;width:${v}%;background:var(--grad);border-radius:4px"></div>
+            </div>
+            <span style="font-size:.8rem;font-weight:600;color:var(--red)">${v}%</span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="sample-page">
+      <h2 style="color:var(--red);margin-bottom:16px">Section-Wise Assessment Summary</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;text-align:left">
+        ${[
+          { name: 'Problem Solving & Technical Aptitude', score: 85, analysis: "Your exceptionally strong problem-solving and technical aptitude indicates a highly logical, analytical mind. You excel at debugging, tracing root causes, and breaking down complex challenges into manageable components. This technical rigor is essential for engineering fields that require deep logical reasoning and systems-level debugging." },
+          { name: 'Subject Interest & Domain Curiosity', score: 80, analysis: "You demonstrate an active curiosity and deep interest in engineering domains. You are eager to learn how complex systems operate—from AI models to mechanical engines. This curiosity drives you to research new technologies independently, making you well-suited for research-heavy and bleeding-edge disciplines." },
+          { name: 'Creative Approach & Design Thinking', score: 90, analysis: "You have a strong creative approach and think like a designer. You prioritize user experience, aesthetics, and user-centric design in engineering products. This creative mindset is critical for modern engineering roles where human-machine interaction, product design, and front-end experience are key." },
+          { name: 'Work Style & Personality', score: 75, analysis: "Your work style reflects strong leadership, collaborative communication, and adaptability. You are comfortable managing team dynamics, resolving conflicts, and taking calculated risks. This makes you an excellent candidate for project management, startup environments, and leadership roles." },
+          { name: 'Career Goals & Industry Vision', score: 88, analysis: "You have a clear, forward-looking industry vision and highly ambitious career goals. Whether it is launching a startup or leading cutting-edge research, you are driven by long-term impact and innovation. You align well with fast-paced, high-growth tech sectors." }
+        ].map((s, i) => `
+          <div style="padding:12px;border:1px solid var(--card-border);border-radius:var(--radius-sm);background:var(--bg-alt)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+              <strong style="color:var(--red);font-size:0.9rem">Section ${i+1}: ${s.name}</strong>
+              <span style="font-weight:700;color:var(--text);font-size:0.9rem">${s.score}%</span>
+            </div>
+            <p style="font-size:0.8rem;color:var(--text-sec);line-height:1.5;margin:0">${s.analysis}</p>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="sample-page">
+      <h2 style="color:var(--red);margin-bottom:16px">Top 7 Recommendations</h2>
+      ${[
+        {name:'Artificial Intelligence and Machine Learning',match:94,reason:'Exceptional alignment with your computational curiosity, mathematical aptitude, and pattern recognition.'},
+        {name:'Computer Science and Engineering',match:89,reason:'Strong programming instincts combined with logical reasoning make CSE a natural fit.'},
+        {name:'Aerospace Engineering',match:82,reason:'Your high mechanical curiosity and interest in flight systems align with aerospace technologies.'},
+        {name:'Electronics and Communication Engineering',match:76,reason:'Your interest in signal processing, networks, and communication systems provides a strong base.'},
+        {name:'Chemical Engineering',match:73,reason:'Strong chemical processing interest and scientific curiosity suit large-scale industrial chemistry.'},
+        {name:'Mechatronics Engineering',match:68,reason:'Perfect blend of mechanical systems, electronics, and automation fits your practical build style.'},
+        {name:'Environmental Engineering',match:62,reason:'Your passion for sustainability and ecology aligns with water and waste resource management.'}
+      ].map((b,i)=>`
+        <div style="padding:14px;border:1px solid var(--card-border);border-radius:var(--radius-sm);margin-bottom:10px;display:flex;align-items:center;gap:14px">
+          <div style="background:var(--grad);color:#fff;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700">#${i+1}</div>
+          <div style="flex:1"><strong>${b.name}</strong> — <span style="color:var(--red);font-weight:700">${b.match}%</span><br><span style="font-size:.82rem;color:var(--text-sec)">${b.reason}</span></div>
+        </div>`).join('')}
+    </div>
+
+    <div class="sample-page" style="text-align:center">
+      <h2 style="color:var(--red);margin-bottom:16px">Ready to Get Your Report?</h2>
+      <p style="color:var(--text-sec);margin-bottom:24px">Take the assessment now to receive your personalized Engineering DNA analysis.</p>
+      <button class="btn btn-primary btn-lg" onclick="closeModal('sampleReportModal');startAssessment()">Start My Assessment</button>
+    </div>
+  `;
+  openModal('sampleReportModal');
+}
+
+/* ========== PDF GENERATION ========== */
+async function generatePDF(isSample = false, customDate = null) {
+  const { jsPDF } = window.jspdf;
+  const renderArea = document.getElementById('pdf-render-area');
+  renderArea.innerHTML = '';
+  
+  // Update button states
+  const buttons = document.querySelectorAll('button');
+  const originalTexts = new Map();
+  buttons.forEach(b => {
+    if (b.innerText.includes('Download') && b.innerText.includes('PDF')) {
+      originalTexts.set(b, b.innerHTML);
+      b.innerHTML = '⏳ Generating PDF...';
+      b.disabled = true;
+    }
+  });
+
+  try {
+    let results, studentName, date;
+    
+    if (isSample) {
+      const sampleTopIds = [{ id: 'aiml', score: 94 }, { id: 'cse', score: 89 }, { id: 'entc', score: 76 }, { id: 'robotics', score: 72 }, { id: 'data-science', score: 68 }];
+      const sampleTopBranches = sampleTopIds.map(s => ({ ...BRANCHES.find(x => x.id === s.id), matchScore: s.score }));
+      results = {
+        traitScores: { Programming: 92, PatternRecognition: 88, Innovation: 85, Mathematics: 82, Research: 78, DataAnalysis: 76, ProblemSolving: 74, LogicalReasoning: 72, Creativity: 70, SystemsThinking: 68, Debugging: 65, ScientificCuriosity: 62, DesignThinking: 60, Automation: 58, Entrepreneurship: 55, Leadership: 52, Communication: 50, Hardware: 48, Precision: 45, Electronics: 40, RiskTaking: 38, SpatialThinking: 35, MechanicalSystems: 30, Construction: 25 },
+        topBranches: sampleTopBranches,
+        dnaType: DNA_TYPES.find(d => d.name === 'The Innovator'),
+        sectionScores: [85, 80, 90, 75, 88]
+      };
+      studentName = 'Arjun Mehta';
+      date = 'June 15, 2026';
+    } else {
+      results = window.assessmentResults;
+      if (!results) { alert('Please complete the assessment first.'); return; }
+      const session = getSession();
+      if (session && session.name) {
+        studentName = session.name;
+      } else {
+        studentName = prompt('Enter your name for the report:') || 'Student';
+      }
+      date = customDate || new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    const { traitScores, topBranches, dnaType, sectionScores } = results;
+    const sortedTraits = Object.entries(traitScores).sort((a, b) => b[1] - a[1]);
+    
+    let pageNum = 1;
+    const createPage = (content) => {
+      const page = document.createElement('div');
+      page.className = 'pdf-page';
+      page.innerHTML = `
+        <div style="flex: 1;">${content}</div>
+        <div class="pdf-page-footer">
+          <span>Engineering DNA Assessment | College Simplified</span>
+          <span>Page ${pageNum++}</span>
+        </div>
+      `;
+      renderArea.appendChild(page);
+      return page;
+    };
+
+    // PAGE 1: Cover
+    createPage(`
+      <div class="pdf-header" style="height:100%; text-align:center; padding:100px 0;">
+        <p style="font-size:14px;letter-spacing:3px;text-transform:uppercase;opacity:.8;margin-bottom:40px;">ENGINEERING DNA ASSESSMENT</p>
+        <h1 style="font-size:48px;font-weight:800;line-height:1.2;margin-bottom:40px;">Personalized Career<br>Intelligence Report</h1>
+        <div style="height:2px;width:100px;background:rgba(255,255,255,.5);margin:0 auto 40px;"></div>
+        <p style="font-size:20px;margin-bottom:10px;">Prepared for: <strong>${studentName}</strong></p>
+        <p style="font-size:16px;opacity:.9;margin-bottom:60px;">Assessment Date: ${date}</p>
+        <div style="background:rgba(255,255,255,.2);padding:16px 40px;border-radius:50px;font-size:24px;font-weight:700;margin-bottom:30px;text-align:center;line-height:32px;">
+          <span style="font-size:32px;vertical-align:middle;margin-right:10px;display:inline-block;">${dnaType.icon}</span>
+          <span style="vertical-align:middle;display:inline-block;">${dnaType.name}</span>
+        </div>
+        <p style="font-size:20px;">Top Match: <strong>${topBranches[0].name} — ${topBranches[0].matchScore}%</strong></p>
+      </div>
+    `);
+
+    // PAGE 2: Executive Summary
+    createPage(`
+      <h2 class="pdf-title">Executive Summary</h2>
+      <div class="pdf-card" style="font-size:16px; line-height:1.8;">
+        <p style="margin-bottom:20px;"><strong>${studentName}</strong> completed a comprehensive 60-question assessment across 5 dimensions: Problem Solving & Technical Aptitude, Subject Interest & Domain Curiosity, Creative Approach & Design Thinking, Work Style & Personality, and Career Goals & Industry Vision.</p>
+        <p style="margin-bottom:20px;">Based on the analysis of 32 engineering traits, ${studentName} has been identified as <strong>"${dnaType.name}"</strong> — ${dnaType.desc}</p>
+        <p style="margin-bottom:20px;">The top branch recommendation is <strong>${topBranches[0].name}</strong> with a <strong>${topBranches[0].matchScore}%</strong> match score. The top 7 recommendations span ${new Set(topBranches.map(b=>b.cluster)).size} different engineering clusters, ensuring diverse career pathways.</p>
+        <p>This report contains detailed trait analysis, branch-specific roadmaps, career pathways, salary direction, and a personalized action plan.</p>
+      </div>
+    `);
+
+    // PAGE 3: Trait Analysis
+    const radarId = 'pdfRadarCanvas';
+    createPage(`
+      <h2 class="pdf-title">Trait Analysis</h2>
+      <div class="pdf-card" style="display:flex; justify-content:center; align-items:center; height:360px; padding:10px; margin-bottom:15px;">
+        <canvas id="${radarId}" style="max-height:100%;"></canvas>
+      </div>
+      <h3 style="color:var(--red);margin:15px 0 10px;font-size:16px;">All 32 Evaluated Traits</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 16px;">
+        ${sortedTraits.map(([t,v]) => `
+          <div style="display:flex;align-items:center;gap:8px;font-size:11px;line-height:1.5;padding:2px 0;">
+            <span style="display:inline-block;width:145px;vertical-align:middle;line-height:1.2;white-space:nowrap;">${t.replace(/([A-Z])/g, ' $1').trim()}</span>
+            <div style="flex:1;height:6px;background:#eee;border-radius:3px;overflow:hidden;">
+              <div style="height:100%;width:${v}%;background:var(--grad);border-radius:3px;"></div>
+            </div>
+            <span style="font-weight:600;color:var(--red);min-width:30px;text-align:right;">${v}%</span>
+          </div>
+        `).join('')}
+      </div>
+    `);
+
+    const ctx = document.getElementById(radarId).getContext('2d');
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: sortedTraits.slice(0, 8).map(t => t[0].replace(/([A-Z])/g, ' $1').trim()),
+        datasets: [{
+          label: 'Trait Score',
+          data: sortedTraits.slice(0, 8).map(t => t[1]),
+          backgroundColor: 'rgba(229, 57, 53, 0.2)',
+          borderColor: '#E53935',
+          pointBackgroundColor: '#E53935',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        animation: false,
+        scales: { r: { min: 0, max: 100, ticks: { display: false } } },
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    // PAGE 4: Section-Wise Assessment
+    createPage(`
+      <h2 class="pdf-title">Section-Wise Summary</h2>
+      <div style="display:flex;flex-direction:column;gap:15px;">
+        ${SECTION_NAMES.map((name, i) => {
+          const score = sectionScores[i];
+          let analysis = '';
+          if (i === 0) analysis = score > 75 ? "Your exceptionally strong problem-solving and technical aptitude indicates a highly logical, analytical mind. You excel at debugging, tracing root causes, and breaking down complex challenges into manageable components." : (score >= 50 ? "You show a solid foundation in logical reasoning and problem solving. You are comfortable working through technical challenges and can trace system failures when given structured instructions." : "You prefer practical, high-level solutions over deep mathematical or algorithm-heavy debugging. While you can resolve standard technical issues, you are more comfortable working in collaborative environments.");
+          else if (i === 1) analysis = score > 75 ? "You demonstrate an active curiosity and deep interest in engineering domains. You are eager to learn how complex systems operate—from AI models to mechanical engines." : (score >= 50 ? "Your interest in engineering concepts is balanced. You enjoy learning about new technologies and their real-world applications." : "Your curiosity is selective and focused on immediate, tangible outcomes. You are less interested in theoretical principles.");
+          else if (i === 2) analysis = score > 75 ? "You have a strong creative approach and think like a designer. You prioritize user experience, aesthetics, and user-centric design in engineering products." : (score >= 50 ? "You appreciate the role of design and aesthetics, but prioritize functional performance and reliability." : "You are a pragmatist who believes that functionality and performance are the only metrics that matter.");
+          else if (i === 3) analysis = score > 75 ? "Your work style reflects strong leadership, collaborative communication, and adaptability. You are comfortable managing team dynamics, resolving conflicts, and taking calculated risks." : (score >= 50 ? "You have a collaborative work style. You work well in team settings and can take on leadership roles when needed." : "You prefer quiet, individual focus with minimal distractions. You work best with structured documentation and clear boundaries.");
+          else if (i === 4) analysis = score > 75 ? "You have a clear, forward-looking industry vision and highly ambitious career goals. Whether it is launching a startup or leading cutting-edge research, you are driven by long-term impact." : (score >= 50 ? "You seek a stable and progressive career path. You value financial security, career stability, and a healthy work-life balance." : "Your career focus is highly practical and immediate. You prefer concrete, hands-on engineering work over long-term strategic management.");
+
+          return `
+            <div class="pdf-card" style="margin-bottom:0; padding:12px 18px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <h3 style="color:var(--red);margin:0;font-size:15px;">Section ${i + 1}: ${name}</h3>
+                <span style="font-weight:700;font-size:15px;">${score}%</span>
+              </div>
+              <div style="width:100%;height:6px;background:#eee;border-radius:3px;margin-bottom:10px;overflow:hidden;">
+                <div style="width:${score}%;height:100%;background:var(--grad);border-radius:3px;"></div>
+              </div>
+              <p style="font-size:12px;line-height:1.5;color:#444;margin:0;">${analysis}</p>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `);
+
+    // PAGE 5: Top 7 Recommendations
+    createPage(`
+      <h2 class="pdf-title">Top 7 Recommendations</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        ${topBranches.map((b, i) => `
+          <div class="pdf-card" style="display:flex;align-items:center;gap:16px;margin-bottom:0;border-left:4px solid var(--red);padding:10px 16px;">
+            <div style="background:var(--grad);color:#fff;width:36px;height:36px;border-radius:50%;text-align:center;line-height:36px;display:block;font-size:15px;font-weight:700;flex-shrink:0;">#${i+1}</div>
+            <div style="flex:1;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <h3 style="margin:0;font-size:15px;">${b.name}</h3>
+                <span style="color:var(--red);font-weight:700;font-size:15px;">${b.matchScore}% Match</span>
+              </div>
+              <p style="font-size:12px;color:#555;margin:0;line-height:1.45;">${b.desc}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `);
+
+    // PAGES 6+: Top 3 Roadmaps
+    topBranches.slice(0, 3).forEach((b) => {
+      const rm = ROADMAPS[b.id];
+      if (!rm) return;
+      
+      createPage(`
+        <h2 class="pdf-title" style="margin-bottom:30px;">${b.name} — Overview</h2>
+        <div class="pdf-card"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Why This Branch Fits You</h3><p style="font-size:13px;line-height:1.6;">${rm.whyFits}</p></div>
+        <div class="pdf-card"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Who This Branch Suits</h3><p style="font-size:13px;line-height:1.6;">${b.whoSuits}</p></div>
+        <div class="pdf-card"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Core Skills</h3><p style="font-size:13px;line-height:1.6;">${b.coreSkills.join(', ')}</p></div>
+        <div class="pdf-card"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Tools & Technologies</h3><p style="font-size:13px;line-height:1.6;">${rm.tools.join(', ')}</p></div>
+        <div class="pdf-card"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Salary Direction</h3><p style="font-size:13px;line-height:1.6;font-weight:500;">${rm.salaryDirection}</p></div>
+      `);
+
+      createPage(`
+        <h2 class="pdf-title" style="margin-bottom:30px;">${b.name} — Roadmap</h2>
+        <div class="pdf-timeline">
+          ${rm.yearByYear.map(y => `
+            <div class="pdf-timeline-item">
+              <h4 style="color:var(--red);margin-bottom:6px;font-size:16px;">${y.year}</h4>
+              <p style="font-size:13px;line-height:1.5;color:#444;">${y.items.join(' • ')}</p>
+            </div>
+          `).join('')}
+        </div>
+        <div class="pdf-card mt-20"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Project Ideas</h3><p style="font-size:13px;line-height:1.6;">${rm.projects.join(' • ')}</p></div>
+        <div class="pdf-card"><h3 style="color:var(--red);margin-bottom:10px;font-size:15px;">Internship Strategy</h3><p style="font-size:13px;line-height:1.6;">${rm.internshipStrategy}</p></div>
+      `);
+    });
+
+    // Comparison Matrix Page
+    createPage(`
+      <h2 class="pdf-title">Branch Comparison Matrix</h2>
+      <div class="pdf-card" style="padding:0;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;font-size:12px;">
+          <thead style="background:var(--soft-red);color:var(--red);">
+            <tr>
+              <th style="padding:15px;">Rank</th>
+              <th style="padding:15px;">Branch</th>
+              <th style="padding:15px;">Match</th>
+              <th style="padding:15px;">Difficulty</th>
+              <th style="padding:15px;">Scope</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${topBranches.map((b, i) => `
+              <tr style="border-bottom:1px solid #eee;">
+                <td style="padding:15px;">#${i+1}</td>
+                <td style="padding:15px;font-weight:600;">${b.name}</td>
+                <td style="padding:15px;color:var(--red);font-weight:700;">${b.matchScore}%</td>
+                <td style="padding:15px;color:#F59E0B;font-size:14px;">${'★'.repeat(b.difficulty)}</td>
+                <td style="padding:15px;color:#10B981;font-size:14px;">${'★'.repeat(b.futureScope)}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `);
+
+    // Career Pathways & Action Plan Page
+    createPage(`
+      <h2 class="pdf-title">Career Pathways & Salary</h2>
+      ${topBranches.slice(0, 3).map((b) => {
+        const rm = ROADMAPS[b.id];
+        return rm ? `
+          <div class="pdf-card" style="margin-bottom:15px;">
+            <h3 style="color:var(--red);margin-bottom:8px;font-size:16px;">${b.name}</h3>
+            <p style="font-size:13px;margin-bottom:8px;"><strong>Roles:</strong> ${rm.careerPaths.join(' | ')}</p>
+            <p style="font-size:13px;margin-bottom:8px;"><strong>Top Recruiters:</strong> ${rm.topRecruiters.slice(0, 5).join(', ')}</p>
+            <p style="font-size:13px;margin-bottom:8px;"><strong>Higher Ed:</strong> ${rm.higherEd.join(', ')}</p>
+          </div>
+        ` : '';
+      }).join('')}
+    `);
+
+    createPage(`
+      <h2 class="pdf-title">Challenges & Limitations</h2>
+      <p style="font-size:15px;margin-bottom:20px;">Every engineering branch has its unique risks and challenges. Here is what to watch out for:</p>
+      ${topBranches.slice(0, 3).map(b => {
+        const rm = ROADMAPS[b.id];
+        return rm ? `
+          <div class="pdf-card">
+            <h3 style="color:var(--red);margin-bottom:12px;font-size:16px;">${b.name}</h3>
+            <ul style="list-style:none;padding:0;margin:0;">
+              ${rm.risks.map(r => `
+                <li style="font-size:13px;line-height:1.6;margin-bottom:8px;display:flex;gap:10px;">
+                  <span style="color:#F59E0B;font-weight:700;">•</span>
+                  <span>${r}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : '';
+      }).join('')}
+    `);
+
+    createPage(`
+      <h2 class="pdf-title">Your Personalized Action Plan</h2>
+      <p style="font-size:15px;margin-bottom:20px;">As a <strong>"${dnaType.name}"</strong>, here are your prioritized next steps:</p>
+      ${topBranches.slice(0, 3).map(b => {
+        const rm = ROADMAPS[b.id];
+        return rm ? `
+          <div class="pdf-card">
+            <h3 style="color:var(--red);margin-bottom:12px;font-size:16px;">For ${b.name}:</h3>
+            <ul style="list-style:none;padding:0;margin:0;">
+              ${rm.actionPlan.map(a => `
+                <li style="font-size:13px;line-height:1.6;margin-bottom:8px;display:flex;gap:10px;">
+                  <span style="color:var(--success);font-weight:700;">✓</span>
+                  <span>${a}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : '';
+      }).join('')}
+    `);
+
+    // Give DOM and Charts time to render
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const pages = document.querySelectorAll('.pdf-page');
+    const doc = new jsPDF('p', 'mm', 'a4');
+    
+    for (let i = 0; i < pages.length; i++) {
+      const canvas = await html2canvas(pages[i], { scale: 2, useCORS: true, logging: false });
+      const imgData = canvas.toDataURL('image/jpeg', 0.98);
+      if (i > 0) doc.addPage();
+      doc.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+    }
+
+    const safeName = (studentName || 'Student').replace(/[^a-zA-Z0-9]/g, '_');
+    doc.save(`Engineering_DNA_Report_${safeName}.pdf`);
+
+  } catch (error) {
+    console.error('PDF Generation failed:', error);
+    alert('An error occurred while generating the PDF. Please try again.');
+  } finally {
+    renderArea.innerHTML = '';
+    buttons.forEach(b => {
+      if (originalTexts.has(b)) {
+        b.innerHTML = originalTexts.get(b);
+        b.disabled = false;
+      }
+    });
+  }
+}
+
+/* ========== INIT ========== */
+document.addEventListener('DOMContentLoaded',()=>{
+  const session = initAuth({
+    requireLogin: true,
+    requirePremium: true,
+    premiumTitle: "Branch Predictor Locked",
+    premiumDescription: "This engineering DNA branch prediction assessment is reserved for Premium members. Upgrade your account or link your purchase to discover the engineering branch you are truly built for and download your premium PDF report.",
+    toolContainerId: 'toolArea'
+  });
+  if (!session) return;
+  renderHomepage();
+  if (new URLSearchParams(window.location.search).get('autofill') === 'true') {
+    answers = Array.from({length: 60}, (_, i) => i % 4);
+    calculateResults();
+  }
+});
+</script>
+</body>
+</html>
