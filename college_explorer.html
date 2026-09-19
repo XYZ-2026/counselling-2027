@@ -1181,20 +1181,53 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
+    .trend-filter-grid {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .trend-filter-grid > div {
+      flex: 1;
+      min-width: 0;
+    }
+
     @media (max-width: 768px) {
       .master-filters {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 8px;
         width: 100%;
       }
 
-      .master-filters .filter-search-input {
-        grid-column: span 2;
-      }
-
       .trend-indicator {
         font-size: 11px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .trend-filter-grid {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .master-list-card {
+        padding: 16px 12px;
+        border-radius: 16px;
+      }
+      .master-list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .master-list-header h3 {
+        font-size: 16px;
+      }
+      .filter-select, .filter-search-input {
+        width: 100%;
+      }
+      .cutoff-table th, .cutoff-table td {
+        padding: 10px 10px;
+        font-size: 12px;
       }
     }
 
@@ -1458,11 +1491,62 @@
 
             <!-- MHT-CET Tab Content -->
             <div id="mhtcetTabContent">
+              <!-- MHT-CET 4-Round Cutoff Trend Analytics Card -->
+              <div class="master-list-card" style="margin-bottom: 24px;">
+                <div class="master-list-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                  <div>
+                    <h3 style="margin:0;">MHT-CET Cutoff Trends Across All 4 Rounds</h3>
+                    <p style="margin:4px 0 0 0; font-size:12.5px; color:var(--muted)">
+                      Analyze how cutoffs progressed from Round 1 through Round 4 for specific engineering branches and categories.
+                    </p>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <div class="toggle-group">
+                      <button class="toggle-btn active" id="btnMetricPct" onclick="setChartMetric('percentile')">Percentile</button>
+                      <button class="toggle-btn" id="btnMetricRank" onclick="setChartMetric('rank')">Rank</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Selectors for Branch & Category -->
+                <div class="trend-filter-grid">
+                  <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase;">Select Branch / Program:</label>
+                    <select id="cBranch" onchange="renderChartAndSummary()" class="filter-select" style="width:100%; text-overflow:ellipsis;"></select>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase;">Select Category:</label>
+                    <select id="cCategory" onchange="renderChartAndSummary()" class="filter-select" style="width:100%; text-overflow:ellipsis;"></select>
+                  </div>
+                </div>
+
+                <!-- Line Chart -->
+                <div style="position:relative; height:260px; width:100%; margin-bottom:24px;">
+                  <canvas id="trendChart"></canvas>
+                </div>
+
+                <!-- Summary Table -->
+                <div class="table-container">
+                  <table class="cutoff-table">
+                    <thead>
+                      <tr>
+                        <th>Round</th>
+                        <th>Cutoff Rank</th>
+                        <th>Cutoff Percentile</th>
+                        <th>Closing Movement</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="summaryTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
               <!-- All Branch Cutoffs Explorer (Master Table) -->
               <div class="master-list-card">
                 <div class="master-list-header"
                   style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-                  <h3 style="margin:0;" id="mhtcetTableTitle">MHT-CET Branch Cutoffs — Round 3 (2026)</h3>
+                  <h3 style="margin:0;" id="mhtcetTableTitle">MHT-CET Branch Cutoffs — Round 1 (2026)</h3>
                   <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
                     <div class="master-filters">
                       <select id="tblCategory" onchange="applyTableFilters()" class="filter-select">
@@ -1475,7 +1559,7 @@
                 </div>
 
                 <div class="table-container">
-                  <table class="data-table">
+                  <table class="data-table" id="mhtcetCutoffTable">
                     <thead>
                       <tr>
                         <th>Course / Branch</th>
@@ -1499,11 +1583,58 @@
 
             <!-- JEE Mains Tab Content -->
             <div id="jeeTabContent" class="hidden">
+              <!-- JEE Mains All India 4-Round Cutoff Trend Analytics Card -->
+              <div class="master-list-card" style="margin-bottom: 24px;">
+                <div class="master-list-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                  <div>
+                    <h3 style="margin:0;">JEE Mains All India Cutoff Trends Across All 4 Rounds</h3>
+                    <p style="margin:4px 0 0 0; font-size:12.5px; color:var(--muted)">
+                      Track All India cutoff rank and percentile progression across Rounds 1, 2, 3, and 4.
+                    </p>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <div class="toggle-group">
+                      <button class="toggle-btn active" id="btnJeeMetricPct" onclick="setJeeChartMetric('percentile')">Percentile</button>
+                      <button class="toggle-btn" id="btnJeeMetricRank" onclick="setJeeChartMetric('rank')">Rank</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Selector for Branch -->
+                <div class="trend-filter-grid">
+                  <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase;">Select Branch Program:</label>
+                    <select id="cJeeBranch" onchange="renderJeeChartAndSummary()" class="filter-select" style="width:100%; text-overflow:ellipsis;"></select>
+                  </div>
+                </div>
+
+                <!-- Line Chart -->
+                <div style="position:relative; height:260px; width:100%; margin-bottom:24px;">
+                  <canvas id="jeeTrendChart"></canvas>
+                </div>
+
+                <!-- Summary Table -->
+                <div class="table-container">
+                  <table class="cutoff-table">
+                    <thead>
+                      <tr>
+                        <th>Round</th>
+                        <th>All India Rank</th>
+                        <th>JEE Percentile</th>
+                        <th>Closing Movement</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="jeeSummaryTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
               <div class="master-list-card">
                 <div class="master-list-header"
                   style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
                   <div>
-                    <h3 style="margin:0;" id="jeeTableTitle">JEE Mains All India Cutoffs — Round 3 (2026)</h3>
+                    <h3 style="margin:0;" id="jeeTableTitle">JEE Mains All India Cutoffs — Round 1 (2026)</h3>
                     <span style="font-size: 12px; color: var(--muted); font-weight: 500;">Direct admission cutoff via
                       JEE Mains score</span>
                   </div>
@@ -2493,12 +2624,36 @@
             setCollegeTab('jee');
           }
 
-          const categories = new Set();
-          collegeMht.forEach(row => {
-            if (row.category) categories.add(row.category.trim());
+          const targetCodeClean = String(college.code).trim().replace(/^0+/, '');
+
+          // Gather all MHT rows for this college across all 4 rounds for trend chart
+          const allRoundsMht = [
+            ...mhtDataR1, ...mhtDataR2, ...mhtDataR3, ...mhtDataR4
+          ].filter(row => {
+            const mhtCode = row.instituteCode ? String(row.instituteCode).trim().replace(/^0+/, '') : (row.choiceCode ? String(row.choiceCode).trim().substring(0, 5).replace(/^0+/, '') : '');
+            return mhtCode === targetCodeClean;
           });
 
+          // Unique MHT branches
+          const mhtBranches = Array.from(new Set(allRoundsMht.map(r => r.branch).filter(Boolean))).sort();
+          const cBranchSel = document.getElementById('cBranch');
+          if (cBranchSel) {
+            cBranchSel.innerHTML = mhtBranches.map(b => `<option value="${escAuth(b)}">${escAuth(b)}</option>`).join('');
+            if (mhtBranches.length > 0) cBranchSel.selectedIndex = 0;
+          }
+
+          // Unique MHT categories
+          const categories = new Set();
+          allRoundsMht.forEach(row => {
+            if (row.category) categories.add(row.category.trim());
+          });
           const categoryArray = Array.from(categories).sort();
+
+          const cCategorySel = document.getElementById('cCategory');
+          if (cCategorySel) {
+            cCategorySel.innerHTML = categoryArray.map(c => `<option value="${escAuth(c)}">${escAuth(c)}</option>`).join('');
+            setSmartDropdownDefault(cCategorySel, ['GOPENS', 'GOPEN']);
+          }
 
           const tblCategorySel = document.getElementById('tblCategory');
           if (tblCategorySel) {
@@ -2506,8 +2661,27 @@
             setSmartDropdownDefault(tblCategorySel, ['GOPENS', 'GOPEN']);
           }
 
+          // Gather all JEE rows for this college across all 4 rounds for trend chart
+          const allRoundsJee = [
+            ...jeeDataR1, ...jeeDataR2, ...jeeDataR3, ...jeeDataR4
+          ].filter(row => {
+            const jeeCode = row.instituteCode ? String(row.instituteCode).trim().replace(/^0+/, '') : (row.choiceCode ? String(row.choiceCode).trim().substring(0, 5).replace(/^0+/, '') : '');
+            return jeeCode === targetCodeClean;
+          });
+
+          // Unique JEE branches
+          const jeeBranches = Array.from(new Set(allRoundsJee.map(r => r.branch).filter(Boolean))).sort();
+          const cJeeBranchSel = document.getElementById('cJeeBranch');
+          if (cJeeBranchSel) {
+            cJeeBranchSel.innerHTML = jeeBranches.map(b => `<option value="${escAuth(b)}">${escAuth(b)}</option>`).join('');
+            if (jeeBranches.length > 0) cJeeBranchSel.selectedIndex = 0;
+          }
+
           applyTableFilters();
           applyJeeTableFilters();
+
+          renderChartAndSummary();
+          renderJeeChartAndSummary();
         }
 
         window.switchExplorerRound = function(round) {
@@ -2593,10 +2767,17 @@
         };
 
         window.renderChartAndSummary = function () {
-          const branch = document.getElementById('cBranch').value;
-          const category = document.getElementById('cCategory').value;
+          const cBranchEl = document.getElementById('cBranch');
+          const cCatEl = document.getElementById('cCategory');
+          if (!cBranchEl || !cCatEl) return;
 
+          const branch = cBranchEl.value;
+          const category = cCatEl.value;
           if (!branch || !category) return;
+
+          const searchVal = document.getElementById('searchColleges') ? document.getElementById('searchColleges').value : '';
+          const college = collegeList.find(c => c.name === searchVal);
+          const targetCodeClean = college ? String(college.code).trim().replace(/^0+/, '') : '';
 
           const labels = ['Round 1', 'Round 2', 'Round 3', 'Round 4'];
           const percentiles = [];
@@ -2608,7 +2789,9 @@
           for (let r = 0; r < roundDataSets.length; r++) {
             const roundArr = roundDataSets[r];
             const match = roundArr.find(row => {
-              return row.branch && row.branch.trim() === branch.trim() && row.category && row.category.trim() === category.trim();
+              const mhtCode = row.instituteCode ? String(row.instituteCode).trim().replace(/^0+/, '') : (row.choiceCode ? String(row.choiceCode).trim().substring(0, 5).replace(/^0+/, '') : '');
+              const codeMatches = !targetCodeClean || mhtCode === targetCodeClean;
+              return codeMatches && row.branch && row.branch.trim() === branch.trim() && row.category && row.category.trim() === category.trim();
             });
             if (match && match.rank != null) {
               const pVal = parseFloat(match.percentile);
